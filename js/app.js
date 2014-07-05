@@ -22,6 +22,13 @@ app.config(function($routeProvider) {
 			templateUrl : 'pages/contact.html',
 			controller  : 'contactController'
 		});
+
+		// route for the contact page
+		.when('/projects', {
+			templateUrl : 'pages/projects.html',
+			controller  : 'projectsController'
+		});
+
 });
 
 
@@ -29,19 +36,17 @@ app.config(function($routeProvider) {
 
 // create the controller and inject Angular's $scope
 app.controller('homeController', function($scope) {
-
+	$scope.message = 'This is a message from the controller, hello GitHub. ';
 });
-
-
-
 
 app.controller('aboutController', function($scope) {
 	$scope.message = 'Look! I am an about page.';
 });
 
-
-
-
 app.controller('contactController', function($scope) {
 	$scope.message = 'Contact us! JK. This is just a demo.';
+});
+
+app.controller('projectsController', function($scope) {
+	$scope.message = 'Look! I am the project page.';
 });
