@@ -21,7 +21,7 @@ app.config(function($routeProvider) {
 		.when('/contact', {
 			templateUrl : 'pages/contact.html',
 			controller  : 'contactController'
-		});
+		})
 
 		// route for the contact page
 		.when('/projects', {
