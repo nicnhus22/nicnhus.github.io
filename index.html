@@ -1,13 +1,81 @@
 <!DOCTYPE html>
-<html>
+
+<!-- define angular app -->
+<html ng-app="app">
+
 <head>
-	<title>NicnHus | GitHub</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+
+  <!-- Add custom CSS here -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- SPELLS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
+  <script src="js/app.js"></script>
+
+  <title>NicnHus | GitHub.Io</title>
 </head>
-<body ng-app>
 
-	<input type="text" ng-model="name" placeholder="Hello GitHub"/>
-	{{name}}
+<!-- define angular controller -->
+<body ng-controller="homeController">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+  <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li><img src="images/logo_panda.png" class="img-responsive" alt="Panda" ></img>
+                </li>
+                <li><a href="#">PROJECTS</a>
+                </li>
+                <li><a href="#">BIOGRAPHY</a>
+                </li>
+                <li><a href="#about">ABOUT</a>
+                </li>
+                <li><a href="#contact">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            
+            <div class="content-header">
+                <h1>
+                    <a id="menu-toggle"><i class="fa fa-bars"></i></a>
+                </h1>
+            </div>
+
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
+              <!-- angular templating -->
+              <!-- this is where content will be injected -->
+              <div ng-view></div>
+
+              <footer class="text-center">
+                <p>&copy; 2013 | NicnHus | GitHub.Io</p>
+              </footer>   
+
+            </div>
+        </div>
+    </div>
+
+  <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+  <!-- Custom JavaScript for the Menu Toggle -->
+  <script>
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("active");
+  });
+  </script>
+  
 </body>
+
 </html>
