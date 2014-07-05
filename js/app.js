@@ -29,14 +29,6 @@ app.config(function($routeProvider) {
 
 // create the controller and inject Angular's $scope
 app.controller('homeController', function($scope) {
-	$scope.videos = [
-		{"url": "images/thumb_sochi.jpg",
-		 "name":"Sochi"},
-		{"url": "images/thumb_sochi.jpg",
-		 "name":"Sochi"},
-		{"url": "images/thumb_sochi.jpg",
-		 "name":"Sochi"}
-	]
 
 });
 
