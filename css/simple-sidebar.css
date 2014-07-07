@@ -84,7 +84,7 @@
   padding: 20px;
 }
 
-@media (max-width:767px) {
+@media (max-width:900px) {
 
 #wrapper {
   padding-left: 0;
