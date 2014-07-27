@@ -50,9 +50,9 @@ app.controller('CommonController', ['$scope',  function($scope){
 	};
 
 	$scope._helperRemoveAllMenuItemClass = function(){
-		$scope.item_home.removeClass('active');
-		$scope.item_projects.removeClass('active');
-		$scope.item_contact.removeClass('active');
+		$scope.menu_items.forEach(function(item){
+			item.removeClass('active');
+		}.bind(this));
 	};
 }]);
 
