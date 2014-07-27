@@ -41,13 +41,13 @@ app.controller('CommonController', function($scope){
 				$scope.item_contact.addClass('active');
 			break;
 		}
-	},
+	};
 
 	_helperRemoveAllMenuItemClass = function(){
 		$scope.item_home.removeClass('active');
 		$scope.item_projects.removeClass('active');
 		$scope.item_contact.removeClass('active');
-	}
+	};
 });
 
 // create the controller and inject Angular's $scope
