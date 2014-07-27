@@ -8,45 +8,59 @@ app.config(function($routeProvider) {
 		// route for the home page
 		.when('/', {
 			templateUrl : 'pages/home.html',
-			controller  : 'homeController'
-		})
-
-		// route for the about page
-		.when('/about', {
-			templateUrl : 'pages/about.html',
-			controller  : 'aboutController'
+			controller  : 'HomeController'
 		})
 
 		// route for the contact page
 		.when('/contact', {
 			templateUrl : 'pages/contact.html',
-			controller  : 'contactController'
+			controller  : 'ContactController'
 		})
 
 		// route for the contact page
 		.when('/projects', {
 			templateUrl : 'pages/projects.html',
-			controller  : 'projectsController'
+			controller  : 'ProjectsController'
 		});
 
 });
 
 
+app.controller('CommonController', function($scope){
 
+	this.updateSelectedItem = this._handleUpdateSelectedItemEvent.bind(this);
+
+	_handleUpdateSelectedItemEvent: function(item){
+		this._helperRemoveAllMenuItemClass();
+		switch(item){
+			case 'home':
+				$scope.item_home.addClass('active');
+			break;
+			case 'projects':
+				$scope.item_projects.addClass('active');
+			break;
+			case 'contact':
+				$scope.item_contact.addClass('active');
+			break;
+		}
+	},
+
+	_helperRemoveAllMenuItemClass: function(){
+		$scope.item_home.removeClass('active');
+		$scope.item_projects.removeClass('active');
+		$scope.item_contact.removeClass('active');
+	}
+});
 
 // create the controller and inject Angular's $scope
-app.controller('homeController', function($scope) {
+app.controller('HomeController', function($scope) {
 	$scope.message = 'This is a message from the controller, hello GitHub. ';
 });
 
-app.controller('aboutController', function($scope) {
-	$scope.message = 'Look! I am an about page.';
-});
-
-app.controller('contactController', function($scope) {
+app.controller('ContactController', function($scope) {
 	$scope.message = 'Contact us! JK. This is just a demo.';
 });
 
-app.controller('projectsController', function($scope) {
+app.controller('ProjectsController', function($scope) {
 	$scope.message = 'Look! I am the project page.';
 });

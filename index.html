@@ -22,7 +22,7 @@
 </head>
 
 <!-- define angular controller -->
-<body ng-controller="homeController">
+<body ng-controller="CommonController">
 
   <div class="site-wrapper">
 
@@ -34,9 +34,9 @@
             <div class="inner">
               <h3 class="masthead-brand">Cover</h3>
               <ul class="nav masthead-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li data-ng-click="updateSelectedItem('home')" data-ng-model="item_home"><a href="#">Home</a></li>
+                <li data-ng-click="updateSelectedItem('projects')" data-ng-model="item_projects"><a href="#projects">Projects</a></li>
+                <li data-ng-click="updateSelectedItem('contact')" data-ng-model="item_contact"><a href="#contact">Contact</a></li>
               </ul>
             </div>
           </div>
