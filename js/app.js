@@ -28,7 +28,7 @@ app.config(function($routeProvider) {
 
 app.controller('CommonController', function($scope){
 
-	$scope.updateSelectedItem = this._handleUpdateSelectedItemEvent.bind(this);
+	$scope.updateSelectedItem = _handleUpdateSelectedItemEvent;
 
 	_handleUpdateSelectedItemEvent = function(item){
 		this._helperRemoveAllMenuItemClass();
