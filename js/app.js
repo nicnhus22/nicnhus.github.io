@@ -28,9 +28,15 @@ app.config(function($routeProvider) {
 
 app.controller('CommonController', ['$scope',  function($scope){
 
+	$scope.menu_items = [
+		{"name":"home","value":"Home"},
+		{"name":"projects","value":"Projects"},
+		{"name":"contact","value":"Contact"}
+	];
+
 	$scope.updateSelectedItem = function(item){
 		this._helperRemoveAllMenuItemClass();
-		switch(item){
+		switch(item.name){
 			case 'home':
 				$scope.item_home.addClass('active');
 			break;
