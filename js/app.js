@@ -28,9 +28,7 @@ app.config(function($routeProvider) {
 
 app.controller('CommonController', function($scope){
 
-	$scope.updateSelectedItem = _handleUpdateSelectedItemEvent;
-
-	_handleUpdateSelectedItemEvent = function(item){
+	updateSelectedItem = function(item){
 		this._helperRemoveAllMenuItemClass();
 		switch(item){
 			case 'home':
