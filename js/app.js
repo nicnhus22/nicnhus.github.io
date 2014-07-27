@@ -48,7 +48,7 @@ app.controller('CommonController', ['$scope',  function($scope){
 		$scope.item_projects.removeClass('active');
 		$scope.item_contact.removeClass('active');
 	};
-});
+}]);
 
 // create the controller and inject Angular's $scope
 app.controller('HomeController', function($scope) {
