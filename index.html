@@ -25,55 +25,33 @@
 
   <div id="wrapper">
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li><img src="images/home_logo.png" width="150" height="150" alt="Panda" ></img>
-                </li>
-                <li><a href="#projects">PROJECTS</a>
-                </li>
-                <li><a href="#about">ABOUT</a>
-                </li>
-                <li><a href="#contact">CONTACT</a>
-                </li>
-            </ul>
+    <!-- Page content -->
+    <div id="page-content-wrapper">
+        
+        <div class="content-header">
+            <h1>
+                <a id="menu-toggle"><i class="fa fa-bars"></i></a>
+            </h1>
         </div>
 
-        <!-- Page content -->
-        <div id="page-content-wrapper">
-            
-            <div class="content-header">
-                <h1>
-                    <a id="menu-toggle"><i class="fa fa-bars"></i></a>
-                </h1>
-            </div>
+        <!-- Keep all page content within the page-content inset div! -->
+        <div>
+          <!-- angular templating -->
+          <!-- this is where content will be injected -->
+          <div ng-view></div>
 
-            <!-- Keep all page content within the page-content inset div! -->
-            <div class="page-content inset">
-              <!-- angular templating -->
-              <!-- this is where content will be injected -->
-              <div ng-view></div>
+          <footer class="text-center">
+            <p>&copy; 2013 | NicnHus | GitHub.Io</p>
+          </footer>   
 
-              <footer class="text-center">
-                <p>&copy; 2013 | NicnHus | GitHub.Io</p>
-              </footer>   
-
-            </div>
         </div>
     </div>
+
+  </div>
 
   <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
-
-  <!-- Custom JavaScript for the Menu Toggle -->
-  <script>
-  $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("active");
-  });
-  </script>
-  
 </body>
 
 </html>
