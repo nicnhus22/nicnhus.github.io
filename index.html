@@ -22,32 +22,17 @@
 
 <!-- define angular controller -->
 <body ng-controller="homeController">
-
-  <div id="wrapper">
-
     <!-- Page content -->
-    <div id="page-content-wrapper">
-        
-        <div class="content-header">
-            <h1>
-                <a id="menu-toggle"><i class="fa fa-bars"></i></a>
-            </h1>
-        </div>
+    <div>
+      <!-- angular templating -->
+      <!-- this is where content will be injected -->
+      <div ng-view></div>
 
-        <!-- Keep all page content within the page-content inset div! -->
-        <div>
-          <!-- angular templating -->
-          <!-- this is where content will be injected -->
-          <div ng-view></div>
-
-          <footer class="text-center">
-            <p>&copy; 2013 | NicnHus | GitHub.Io</p>
-          </footer>   
-
-        </div>
+      <footer class="text-center">
+        <p>&copy; 2013 | NicnHus | GitHub.Io</p>
+      </footer>   
     </div>
-
-  </div>
+    <!-- End of Page content -->
 
   <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
