@@ -35,7 +35,6 @@ app.controller('CommonController', ['$scope',  function($scope){
 	];
 
 	$scope.updateSelectedItem = function(item){
-		this._helperRemoveAllMenuItemClass();
 		switch(item.name){
 			case 'home':
 				$scope.item_home.addClass('active');
@@ -49,11 +48,6 @@ app.controller('CommonController', ['$scope',  function($scope){
 		}
 	};
 
-	$scope._helperRemoveAllMenuItemClass = function(){
-		$scope.menu_items.forEach(function(item){
-			item.removeClass('active');
-		}.bind(this));
-	};
 }]);
 
 // create the controller and inject Angular's $scope
