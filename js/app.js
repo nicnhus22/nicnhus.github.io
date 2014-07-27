@@ -28,9 +28,9 @@ app.config(function($routeProvider) {
 
 app.controller('CommonController', function($scope){
 
-	this.updateSelectedItem = this._handleUpdateSelectedItemEvent.bind(this);
+	$scope.updateSelectedItem = this._handleUpdateSelectedItemEvent.bind(this);
 
-	_handleUpdateSelectedItemEvent: function(item){
+	_handleUpdateSelectedItemEvent = function(item){
 		this._helperRemoveAllMenuItemClass();
 		switch(item){
 			case 'home':
@@ -45,7 +45,7 @@ app.controller('CommonController', function($scope){
 		}
 	},
 
-	_helperRemoveAllMenuItemClass: function(){
+	_helperRemoveAllMenuItemClass = function(){
 		$scope.item_home.removeClass('active');
 		$scope.item_projects.removeClass('active');
 		$scope.item_contact.removeClass('active');
