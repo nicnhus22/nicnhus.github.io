@@ -145,7 +145,7 @@
     padding-top: 0;
   }
 }
-@media all and (max-width: 5000px) {
+@media (max-width: 767px) {
   /* line 123, style.scss */
   #wrapper {
     padding-left: 0;
