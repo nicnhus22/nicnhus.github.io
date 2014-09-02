@@ -4,10 +4,11 @@
 <html ng-app="app">
 
 <head>
+  <!-- -->
+  <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.css" rel="stylesheet">
-  <link href="css/cover.css" rel="stylesheet">
 
   <!-- Add custom CSS here -->
   <link href="css/style.css" rel="stylesheet">
@@ -18,49 +19,69 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.js"></script>
   <script src="js/app.js"></script>
 
-  <title>NicnHus | GitHub.Io</title>
+
 </head>
 
 <!-- define angular controller -->
-<body ng-controller="CommonController">
+<body ng-controller="homeController">
 
-  <div class="site-wrapper">
+  <div id="wrapper">
 
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
-              <ul class="nav masthead-nav" data-ng-repeat="menu_item in menu_items">
-                <li data-ng-click="updateSelectedItem(menu_item)"><a data-ng-href="#{{menu_item.name}}">{{menu_item.value}}</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <div ng-view>
-              <!-- This is where content will be injected -->
-            </div>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-          </div>
-
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li><img src="images/logo_panda.png" class="img-responsive" alt="Panda" height="180" width="180"></img>
+                </li>
+                <li><a href="#">FILMS</a>
+                </li>
+                <li><a href="#">MAKING OF</a>
+                </li>
+                <li><a href="#">PHOTOGRAPHY</a>
+                </li>
+                <li><a href="#">CLIENTS</a>
+                </li>
+                <li><a href="#about">ABOUT</a>
+                </li>
+                <li><a href="#contact">CONTACT</a>
+                </li>
+            </ul>
         </div>
 
-      </div>
+        <!-- Page content -->
+        <div id="page-content-wrapper">
+            
+            <div class="content-header">
+                <h1>
+                    <a id="menu-toggle"><i class="fa fa-bars"></i></a>
+                </h1>
+            </div>
 
+            <!-- Keep all page content within the page-content inset div! -->
+            <div class="page-content inset">
+              <!-- angular templating -->
+              <!-- this is where content will be injected -->
+              <div ng-view></div>
+
+              <footer class="text-center">
+                <p>&copy; 2013 | PANDA COMPANY | VIDEO ASSOCIATION</p>
+              </footer>   
+
+            </div>
+        </div>
     </div>
 
   <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
-</body>
-</html>
 
- 
+  <!-- Custom JavaScript for the Menu Toggle -->
+  <script>
+  $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("active");
+  });
+  </script>
+  
+</body>
+
+</html>

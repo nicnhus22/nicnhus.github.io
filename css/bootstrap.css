@@ -309,9 +309,22 @@ img {
 }
 .img-responsive {
   display: block;
-  max-width: 100%;
+  max-width: 85%;
   height: auto;
+  margin:auto auto;
+  opacity:0.9;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
+
+.img-responsive:hover {
+  max-width: 90%;
+  opacity:1;
+  cursor:pointer;
+}
+
 .img-rounded {
   border-radius: 6px;
 }

@@ -8,57 +8,50 @@ app.config(function($routeProvider) {
 		// route for the home page
 		.when('/', {
 			templateUrl : 'pages/home.html',
-			controller  : 'HomeController'
+			controller  : 'homeController'
+		})
+
+		// route for the about page
+		.when('/about', {
+			templateUrl : 'pages/about.html',
+			controller  : 'aboutController'
 		})
 
 		// route for the contact page
 		.when('/contact', {
 			templateUrl : 'pages/contact.html',
-			controller  : 'ContactController'
-		})
-
-		// route for the contact page
-		.when('/projects', {
-			templateUrl : 'pages/projects.html',
-			controller  : 'ProjectsController'
+			controller  : 'contactController'
 		});
-
 });
 
 
-app.controller('CommonController', ['$scope',  function($scope){
 
-	$scope.menu_items = [
-		{"name":"home","value":"Home"},
-		{"name":"projects","value":"Projects"},
-		{"name":"contact","value":"Contact"}
-	];
-
-	$scope.updateSelectedItem = function(item){
-		switch(item.name){
-			case 'home':
-				$scope.item_home.addClass('active');
-			break;
-			case 'projects':
-				$scope.item_projects.addClass('active');
-			break;
-			case 'contact':
-				$scope.item_contact.addClass('active');
-			break;
-		}
-	};
-
-}]);
 
 // create the controller and inject Angular's $scope
-app.controller('HomeController', function($scope) {
-	$scope.message = 'This is a message from the controller, hello GitHub. ';
+app.controller('homeController', function($scope) {
+	$scope.videos = [
+		{"url": "images/thumb_brainwash.jpg",
+		 "name":"Sochi"},
+		{"url": "images/thumb_fantin.jpg",
+		 "name":"Sochi"},
+		{"url": "images/thumb_tourmente.jpg",
+		 "name":"Sochi"},
+		{"url": "images/thumb_winter_game.jpg",
+		 "name":"Sochi"}
+	]
+
 });
 
-app.controller('ContactController', function($scope) {
+
+
+
+app.controller('aboutController', function($scope) {
+	$scope.message = 'Look! I am an about page.';
+});
+
+
+
+
+app.controller('contactController', function($scope) {
 	$scope.message = 'Contact us! JK. This is just a demo.';
-});
-
-app.controller('ProjectsController', function($scope) {
-	$scope.message = 'Look! I am the project page.';
 });
