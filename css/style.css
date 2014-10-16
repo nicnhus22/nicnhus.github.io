@@ -140,41 +140,35 @@
 }
 
 @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
-  /* line 118, style.scss */
-  .flex-video {
-    padding-top: 0;
-  }
-}
-@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
-  /* line 123, style.scss */
+  /* line 119, style.scss */
   #wrapper {
     padding-left: 0;
   }
 
-  /* line 127, style.scss */
+  /* line 123, style.scss */
   #sidebar-wrapper {
     left: 0;
   }
 
-  /* line 131, style.scss */
+  /* line 127, style.scss */
   #wrapper.active {
     position: relative;
     left: 250px;
   }
 
-  /* line 136, style.scss */
+  /* line 132, style.scss */
   #wrapper.active #sidebar-wrapper {
     left: 250px;
     width: 250px;
     transition: all 0.4s ease 0s;
   }
 
-  /* line 142, style.scss */
+  /* line 138, style.scss */
   #menu-toggle {
     display: inline-block;
   }
 
-  /* line 146, style.scss */
+  /* line 142, style.scss */
   .inset {
     padding: 15px;
   }
