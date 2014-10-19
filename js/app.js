@@ -40,7 +40,7 @@ app.controller('homeController', function($scope) {
 		 "size":"6"},
 		{"img": "images/thumb_tourmente.jpg",
 		 "name":"Sochi",
-		 "url":"http://www.biketrials.tv/fr/video/1245"},
+		 "url":"http://www.biketrials.tv/fr/video/1245",
 		 "size":"6"},
 		{"img": "images/thumb_winter_game.jpg",
 		 "name":"Sochi",
