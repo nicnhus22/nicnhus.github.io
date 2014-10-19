@@ -32,16 +32,16 @@ app.controller('homeController', function($scope) {
 	$scope.videos = [
 		{"img": "images/thumb_brainwash.jpg",
 		 "name":"BrainWash",
-		 "url":"http://www.biketrials.tv/fr/video/1245"},
-		 "size":"12"
+		 "url":"http://www.biketrials.tv/fr/video/1245",
+		 "size":"12"}
 		{"img": "images/thumb_fantin.jpg",
 		 "name":"Sochi",
-		 "url":"http://www.biketrials.tv/fr/video/1245"},
-		 "size":"6"
+		 "url":"http://www.biketrials.tv/fr/video/1245",
+		 "size":"6"}
 		{"img": "images/thumb_tourmente.jpg",
 		 "name":"Sochi",
 		 "url":"http://www.biketrials.tv/fr/video/1245"},
-		 "size":"6"
+		 "size":"6"}
 		{"img": "images/thumb_winter_game.jpg",
 		 "name":"Sochi",
 		 "url":"http://www.biketrials.tv/fr/video/1245",
