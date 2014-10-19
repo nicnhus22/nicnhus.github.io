@@ -318,7 +318,6 @@ img {
 }
 
 .img-responsive:hover {
-  max-width: 90%;
   opacity:1;
   cursor:pointer;
 }
