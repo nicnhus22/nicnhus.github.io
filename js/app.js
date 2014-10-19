@@ -30,22 +30,26 @@ app.config(function($routeProvider) {
 // create the controller and inject Angular's $scope
 app.controller('homeController', function($scope) {
 	$scope.videos = [
-		{"img": "images/thumb_brainwash.jpg",
-		 "name":"BrainWash",
+		{"img": "images/thumb_quickpro.jpg",
+		 "name":"QuickPro",
 		 "url":"http://www.biketrials.tv/fr/video/1245",
 		 "size":"12"},
 		{"img": "images/thumb_fantin.jpg",
-		 "name":"Sochi",
+		 "name":"Fantin",
+		 "url":"http://www.biketrials.tv/fr/video/1245",
+		 "size":"6"},
+		{"img": "images/thumb_brainwash.jpg",
+		 "name":"BrainWash",
 		 "url":"http://www.biketrials.tv/fr/video/1245",
 		 "size":"6"},
 		{"img": "images/thumb_tourmente.jpg",
-		 "name":"Sochi",
+		 "name":"Tourmente",
 		 "url":"http://www.biketrials.tv/fr/video/1245",
 		 "size":"6"},
-		{"img": "images/thumb_winter_game.jpg",
-		 "name":"Sochi",
+		{"img": "images/thumb_wg.jpg",
+		 "name":"WinterGame",
 		 "url":"http://www.biketrials.tv/fr/video/1245",
-		 "size":"12"}
+		 "size":"6"}
 	]
 
 });
