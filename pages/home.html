@@ -1,6 +1,6 @@
-<div  data-ng-repeat="video in videos" ng-if="(videos[$index].size == '6' && videos[$index+1].size == '6') || video.size == '12'" class="row">
+<div  data-ng-repeat="video in videos" ng-if="(videos[$index].size == '6' && videos[$index+1].size == '6') || video.size == '12'">
 	<!-- Two Small videos -->
-	<div data-ng-if="video.size == '6'">
+	<div data-ng-if="video.size == '6'" class="row">
 
 		<div data-ng-class="col-md-{{video.size}}">
 			<a href="{{video.url}}" target="_blank">
@@ -15,7 +15,7 @@
 		</div>
 	</div>
 	<!-- Large Video -->
-	<div data-ng-if="video.size == '12'">
+	<div data-ng-if="video.size == '12'" class="row">
 		<div data-ng-class="col-md-{{video.size}}">
 			<a href="{{video.url}}" target="_blank">
 				<img data-ng-src="{{video.img}}" class="img-responsive"  alt="Sochi"><br/>
