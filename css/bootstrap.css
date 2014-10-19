@@ -305,13 +305,12 @@ figure {
   margin: 0;
 }
 img {
-  vertical-align: middle;
+  
 }
 .img-responsive {
   display: block;
   max-width: 85%;
   height: auto;
-  margin:auto auto;
   opacity:0.9;
   transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
