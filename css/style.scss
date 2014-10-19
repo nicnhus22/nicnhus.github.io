@@ -146,6 +146,20 @@ font-family: 'Lato', sans-serif;
   text-align:justify;
 }
 
+.img-responsive-videos {
+    opacity:0.9;
+}
+
+.img-responsive:hover {
+  opacity:1;
+  cursor:pointer;
+}
+
+.img-responsive-photos {
+  width:70%;
+}
+
+
 @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 1100px) {
 
 	#wrapper {

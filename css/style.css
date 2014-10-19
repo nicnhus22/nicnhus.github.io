@@ -176,36 +176,52 @@
   text-align: justify;
 }
 
+/* line 149, style.scss */
+.img-responsive-videos {
+  opacity: 0.9;
+}
+
+/* line 153, style.scss */
+.img-responsive:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* line 158, style.scss */
+.img-responsive-photos {
+  width: 70%;
+}
+
 @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 1100px) {
-  /* line 151, style.scss */
+  /* line 165, style.scss */
   #wrapper {
     padding-left: 0;
   }
 
-  /* line 155, style.scss */
+  /* line 169, style.scss */
   #sidebar-wrapper {
     left: 0;
   }
 
-  /* line 159, style.scss */
+  /* line 173, style.scss */
   #wrapper.active {
     position: relative;
     left: 250px;
   }
 
-  /* line 164, style.scss */
+  /* line 178, style.scss */
   #wrapper.active #sidebar-wrapper {
     left: 250px;
     width: 250px;
     transition: all 0.4s ease 0s;
   }
 
-  /* line 170, style.scss */
+  /* line 184, style.scss */
   #menu-toggle {
     display: inline-block;
   }
 
-  /* line 174, style.scss */
+  /* line 188, style.scss */
   .inset {
     padding: 15px;
   }
