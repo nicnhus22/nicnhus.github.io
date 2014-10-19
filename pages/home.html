@@ -2,25 +2,20 @@
 	<!-- Two Small videos -->
 	<div data-ng-if="video.size == '6'" class="row">
 
-		<div data-ng-class="col-md-{{video.size}}">
-			<a href="{{video.url}}" target="_blank">
-				<img data-ng-src="{{video.img}}" class="img-responsive"  alt="Sochi"><br/>
-			</a>
-		</div>
+		<a href="{{video.url}}" target="_blank" data-ng-class="col-md-{{video.size}}">
+			<img data-ng-src="{{video.img}}" class="img-responsive"  alt="Sochi"><br/>
+		</a>
 
-		<div data-ng-class="col-md-{{videos[$index+1].size}}">
-			<a href="{{videos[$index+1].url}}" target="_blank">
-				<img data-ng-src="{{videos[$index+1].img}}" class="img-responsive"  alt="Sochi"><br/>
-			</a>
-		</div>
+		<a href="{{videos[$index+1].url}}" target="_blank" data-ng-class="col-md-{{video.size}}">
+			<img data-ng-src="{{videos[$index+1].img}}" class="img-responsive"  alt="Sochi"><br/>
+		</a>
+
 	</div>
 	<!-- Large Video -->
 	<div data-ng-if="video.size == '12'" class="row">
-		<div data-ng-class="col-md-{{video.size}}">
-			<a href="{{video.url}}" target="_blank">
-				<img data-ng-src="{{video.img}}" class="img-responsive"  alt="Sochi"><br/>
-			</a>
-		</div>
+		<a href="{{video.url}}" target="_blank" data-ng-class="col-md-{{video.size}}">
+			<img data-ng-src="{{video.img}}" class="img-responsive"  alt="Sochi"><br/>
+		</a>
 	</div>
 </div>
 
