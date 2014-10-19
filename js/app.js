@@ -12,9 +12,9 @@ app.config(function($routeProvider) {
 		})
 
 		// route for the about page
-		.when('/about', {
-			templateUrl : 'pages/about.html',
-			controller  : 'aboutController'
+		.when('/mylife', {
+			templateUrl : 'pages/mylife.html',
+			controller  : 'myLifeController'
 		})
 
 		// route for the contact page
@@ -61,8 +61,7 @@ app.controller('homeController', function($scope) {
 
 
 
-app.controller('aboutController', function($scope) {
-	$scope.message = 'Look! I am an about page.';
+app.controller('myLifeController', function($scope) {
 });
 
 
