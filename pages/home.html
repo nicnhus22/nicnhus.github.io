@@ -1,4 +1,4 @@
-<div  data-ng-repeat="video in videos" class="row">
+<div  data-ng-repeat="video in videos" ng-if="(videos[$index].size == '6' && videos[$index+1].size == '6') || video.size == '12'" class="row">
 	<!-- Two Small videos -->
 	<div data-ng-if="video.size == '6'">
 
