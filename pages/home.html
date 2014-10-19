@@ -2,13 +2,25 @@
 	<!-- Two Small videos -->
 	<div data-ng-if="video.size == '6'" class="row">
 
-		<a href="{{video.url}}" target="_blank" class="col-md-6">
-			<img data-ng-src="{{video.img}}" class="img-responsive"  alt="Sochi"><br/>
-		</a>
+		<div class="col-md-6">
+			<div class="js-video [vimeo, widescreen]" style="display:none">
+			  <iframe width="560" height="315" src="http://www.youtube.com/embed/wN3gueLT0D8?showinfo=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<a href="{{video.url}}" target="_blank">
+				<img data-ng-src="{{video.img}}" class="img-responsive"  alt="Sochi"><br/>
+			</a>
+		</div>
+		
 
-		<a href="{{videos[$index+1].url}}" target="_blank" class="col-md-6">
-			<img data-ng-src="{{videos[$index+1].img}}" class="img-responsive"  alt="Sochi"><br/>
-		</a>
+		<div class="col-md-6">
+			<div class="js-video [vimeo, widescreen]" style="display:none">
+			  <iframe width="560" height="315" src="http://www.youtube.com/embed/wN3gueLT0D8?showinfo=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+			<a href="{{videos[$index+1].url}}" target="_blank">
+				<img data-ng-src="{{videos[$index+1].img}}" class="img-responsive"  alt="Sochi"><br/>
+			</a>
+		</div>
+		
 
 	</div>
 	<!-- Large Video -->
