@@ -1,5 +1,21 @@
-<div class="row">
-	<div data-ng-repeat="video in videos">
+<div  data-ng-repeat="video in videos" class="row">
+	<!-- Two Small videos -->
+	<div data-ng-if="video.size == '6'">
+
+		<div data-ng-class="col-md-{{video.size}}">
+			<a href="{{video.url}}" target="_blank">
+				<img data-ng-src="{{video.img}}" class="img-responsive"  alt="Sochi"><br/>
+			</a>
+		</div>
+
+		<div data-ng-class="col-md-{{video[$index+1].size}}">
+			<a href="{{video[$index+1].url}}" target="_blank">
+				<img data-ng-src="{{video[$index+1].img}}" class="img-responsive"  alt="Sochi"><br/>
+			</a>
+		</div>
+	</div>
+	<!-- Large Video -->
+	<div data-ng-if="video.size == '12'">
 		<div data-ng-class="col-md-{{video.size}}">
 			<a href="{{video.url}}" target="_blank">
 				<img data-ng-src="{{video.img}}" class="img-responsive"  alt="Sochi"><br/>
@@ -7,6 +23,7 @@
 		</div>
 	</div>
 </div>
+
 
 <!-- <div class="flex-video widescreen">
     	<iframe src="//player.vimeo.com/video/87254228" frameborder="0" allowfullscreen=""></iframe>
