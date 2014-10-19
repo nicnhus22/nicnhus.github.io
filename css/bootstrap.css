@@ -308,8 +308,7 @@ img {
   
 }
 .img-responsive {
-  max-width: 100%;
-  min-width: 100%;
+  width: 100%;
   height: auto;
   opacity:0.9;
   transition: all 0.5s ease-in-out;
