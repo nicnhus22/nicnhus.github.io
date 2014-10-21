@@ -54,9 +54,7 @@ app.controller('homeController', function($scope) {
 		 "name":"WinterGame",
 		 "url":"http://www.biketrials.tv/fr/video/1245",
 		 "size":"6"}
-	];
-
-	$("img.lazy").lazyload();
+	]
 
 });
 
