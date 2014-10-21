@@ -106,9 +106,10 @@
 /* line 91, style.scss */
 .inset {
   padding: 20px;
+  padding-right: 40px;
 }
 
-/* line 95, style.scss */
+/* line 96, style.scss */
 .flex-video {
   position: relative;
   padding-top: 25px;
@@ -118,17 +119,17 @@
   overflow: hidden;
 }
 
-/* line 104, style.scss */
+/* line 105, style.scss */
 .flex-video.widescreen {
   padding-bottom: 57.25%;
 }
 
-/* line 105, style.scss */
+/* line 106, style.scss */
 .flex-video.vimeo {
   padding-top: 0;
 }
 
-/* line 109, style.scss */
+/* line 110, style.scss */
 .flex-video iframe,
 .flex-video object,
 .flex-video embed {
@@ -139,7 +140,7 @@
   height: 100%;
 }
 
-/* line 117, style.scss */
+/* line 118, style.scss */
 .js-video {
   height: 0;
   padding-top: 25px;
@@ -149,17 +150,17 @@
   overflow: hidden;
 }
 
-/* line 126, style.scss */
+/* line 127, style.scss */
 .js-video.widescreen {
   padding-bottom: 57.25%;
 }
 
-/* line 130, style.scss */
+/* line 131, style.scss */
 .js-video.vimeo {
   padding-top: 0;
 }
 
-/* line 134, style.scss */
+/* line 135, style.scss */
 .js-video embed, .js-video iframe, .js-video object, .js-video video {
   top: 0;
   left: 0;
@@ -168,7 +169,7 @@
   position: absolute;
 }
 
-/* line 142, style.scss */
+/* line 143, style.scss */
 .text-block {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -176,52 +177,52 @@
   text-align: justify;
 }
 
-/* line 149, style.scss */
+/* line 150, style.scss */
 .img-responsive-videos {
   opacity: 0.9;
 }
 
-/* line 153, style.scss */
+/* line 154, style.scss */
 .img-responsive:hover {
   opacity: 1;
   cursor: pointer;
 }
 
-/* line 158, style.scss */
+/* line 159, style.scss */
 .img-responsive-photos {
   width: 70%;
 }
 
 @media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 1100px) {
-  /* line 165, style.scss */
+  /* line 166, style.scss */
   #wrapper {
     padding-left: 0;
   }
 
-  /* line 169, style.scss */
+  /* line 170, style.scss */
   #sidebar-wrapper {
     left: 0;
   }
 
-  /* line 173, style.scss */
+  /* line 174, style.scss */
   #wrapper.active {
     position: relative;
     left: 250px;
   }
 
-  /* line 178, style.scss */
+  /* line 179, style.scss */
   #wrapper.active #sidebar-wrapper {
     left: 250px;
     width: 250px;
     transition: all 0.4s ease 0s;
   }
 
-  /* line 184, style.scss */
+  /* line 185, style.scss */
   #menu-toggle {
     display: inline-block;
   }
 
-  /* line 188, style.scss */
+  /* line 189, style.scss */
   .inset {
     padding: 15px;
   }
