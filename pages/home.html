@@ -3,18 +3,18 @@
 	<div data-ng-if="video.size == '6'" class="row">
 
 		<a href="{{video.url}}" target="_blank" class="col-md-6">
-			<img data-ng-src="{{video.img}}" data-ng-class="img-responsive img-responsive-videos lazy"><br/>
+			<img data-ng-src="{{video.img}}" class="img-responsive img-responsive-videos lazy"><br/>
 		</a>
 		
 		<a href="{{videos[$index+1].url}}" target="_blank" class="col-md-6">
-			<img data-ng-src="{{videos[$index+1].img}}" data-class="img-responsive img-responsive-videos lazy"><br/>
+			<img data-ng-src="{{videos[$index+1].img}}" class="img-responsive img-responsive-videos lazy"><br/>
 		</a>
 
 	</div>
 	<!-- Large Video -->
 	<div data-ng-if="video.size == '12'" class="row">
 		<a href="{{video.url}}" target="_blank" class="col-md-12">
-			<img data-ng-src="{{video.img}}" data-class="img-responsive img-responsive-videos lazy"><br/>
+			<img data-ng-src="{{video.img}}" class="img-responsive img-responsive-videos lazy"><br/>
 		</a>
 	</div>
 </div>
