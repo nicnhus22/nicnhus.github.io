@@ -53,6 +53,12 @@
   text-decoration: none;
 }
 
+.sidebar-nav li span {
+  color: #999999;
+  display: block;
+  text-decoration: none;
+}
+
 /* line 49, style.scss */
 .sidebar-nav li a:hover {
   color: #000;
