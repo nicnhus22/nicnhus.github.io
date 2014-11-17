@@ -54,8 +54,7 @@ app.controller('homeController', function($scope) {
 		 "name":"WinterGame",
 		 "url":"http://www.biketrials.tv/fr/video/1245",
 		 "size":"6"}
-	]
-
+	];
 });
 
 
@@ -63,7 +62,6 @@ app.controller('homeController', function($scope) {
 
 app.controller('myLifeController', function($scope) {
 });
-
 
 
 
