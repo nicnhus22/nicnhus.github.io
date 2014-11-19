@@ -85,9 +85,6 @@ app.controller('homeController', function($scope) {
 	 	$('.video').fadeOut(50);
 	 	$('#video_player').html('');
 	 };
-
-    $scope.$on('$viewContentLoaded', addCrudControls);
-
 });
 
 
