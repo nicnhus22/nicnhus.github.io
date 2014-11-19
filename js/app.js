@@ -40,29 +40,51 @@ app.controller('homeController', function($scope) {
 		 "name":"QuickPro",
 		 "url":"http://www.dailymotion.com/video/x27so7v_new-generation-is-taking-the-lead_sport",
 		 "size":"12",
-		 "iframe":'<iframe src="//www.dailymotion.com/video/x27so7v_new-generation-is-taking-the-lead_sport" frameborder="0" allowfullscreen></iframe>'},
+		 "iframe":'<iframe src="//www.dailymotion.com/embed/video/x27so7v" frameborder="0" allowfullscreen></iframe>'},
 		{"img": "images/thumb_fantin.jpg",
 		 "name":"Fantin",
-		 "url":"http://vimeo.com/106747724",
-		 "size":"6"},
+		 "url":"http://player.vimeo.com/video/106747724",
+		 "size":"6",
+		 "iframe":'<iframe src="//player.vimeo.com/video/106747724" width="700" allowfullscreen></iframe>'},
 		{"img": "images/thumb_brainwash.jpg",
 		 "name":"BrainWash",
-		 "url":"http://vimeo.com/92776281",
-		 "size":"6"},
+		 "url":"http://player.vimeo.com/video/92776281",
+		 "size":"6",
+		 "iframe":'<iframe src="//player.vimeo.com/video/92776281" width="700" allowfullscreen></iframe>'},
 		{"img": "images/thumb_briancon.jpg",
 		 "name":"BrianconHockey",
-		 "url":"http://vimeo.com/94397159",
-		 "size":"12"}, 
+		 "url":"http://player.vimeo.com/video/94397159",
+		 "size":"12",
+		 "iframe":'<iframe src="//player.vimeo.com/video/94397159" width="700" allowfullscreen></iframe>'}, 
 		{"img": "images/thumb_tourmente.jpg",
 		 "name":"Tourmente",
-		 "url":"http://vimeo.com/80446304",
-		 "size":"6"},
+		 "url":"http://player.vimeo.com/video/80446304",
+		 "size":"6",
+		 "iframe":'<iframe src="//player.vimeo.com/video/80446304" width="700" allowfullscreen></iframe>'},
 		{"img": "images/thumb_wg.jpg",
 		 "name":"WinterGame",
-		 "url":"http://vimeo.com/83587355",
-		 "size":"6"}
-	]
+		 "url":"http://player.vimeo.com/video/83587355",
+		 "size":"6",
+		 "iframe":'<iframe src="//player.vimeo.com/video/83587355" width="700" allowfullscreen></iframe>'},
+	];
 
+	 $scope.launchVideo = function(video){
+	 	$('#blur_container').css('width','100%');
+	 	$('#loading_spinner').fadeIn(500);
+	 	setTimeout(function(){
+	 		$('#video_player').html(video.iframe);
+	 	},1000);
+	 	setTimeout(function(){
+	 		$('#loading_spinner').fadeOut(1000);
+	 		$('.video').fadeIn(1000);
+	 	},2500);
+	 };
+
+	 $scope.closePlayer = function(){
+	 	$('#blur_container').css('width','0');
+	 	$('.video').fadeOut(50);
+	 	$('#video_player').html('');
+	 };
 
 });
 

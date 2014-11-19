@@ -27,6 +27,17 @@
 <!-- define angular controller -->
 <body ng-controller="homeController">
 
+  <div id="blur_container">
+     <img id="loading_spinner" src="images/loading_spinner.png" width="100px" height="100px" alt="Loading..."/>
+     <div class="video">
+          <div class="inner_close"><i class="fa fa-times" style="font-size:40px;color:rgba(255,255,255,0.8)" data-ng-click="closePlayer()"></i></div>
+          <div class="inner_video">
+            <div class="flex-video widescreen" id="video_player">
+            </div>
+          </div>
+     </div>
+  </div>
+
   <div id="wrapper">
 
         <!-- Sidebar -->
@@ -73,7 +84,6 @@
   <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js" type="text/javascript"></script>
     <script src="js/bootstrap.js" type="text/javascript"></script>
-    <script src="js/lazyload.js" type="text/javascript"></script>
 
   <!-- Custom JavaScript for the Menu Toggle -->
   <script>
