@@ -72,6 +72,8 @@ app.controller('homeController', function($scope) {
 	 	$('#blur_container').css('width','100%');
 	 	setTimeout(function(){
 	 		$('#video_player').html(video.iframe);
+	 	},1500);
+	 	setTimeout(function(){
 	 		$('.video').fadeIn(1000);
 	 	},2000);
 	 };
