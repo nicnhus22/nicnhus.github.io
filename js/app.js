@@ -66,7 +66,13 @@ app.controller('homeController', function($scope) {
 	 	$('#blur_container').css('width','100%');
 	 	$('.video').fadeIn(3000);
 	 	$('.inner_video').html(video.name);
-	 }
+	 };
+
+	 $scope.closePlayer = function(){
+	 	$('#blur_container').css('width','0');
+	 	$('.video').fadeOut(1000);
+	 	$('.inner_video').html('');
+	 };
 
 });
 
