@@ -70,12 +70,14 @@ app.controller('homeController', function($scope) {
 
 	 $scope.launchVideo = function(video){
 	 	$('#blur_container').css('width','100%');
+	 	$('#loading_spinner').fadeIn(1500);
 	 	setTimeout(function(){
 	 		$('#video_player').html(video.iframe);
-	 	},1500);
+	 	},1000);
 	 	setTimeout(function(){
+	 		$('#loading_spinner').fadeOut(1000);
 	 		$('.video').fadeIn(1000);
-	 	},2000);
+	 	},2500);
 	 };
 
 	 $scope.closePlayer = function(){
