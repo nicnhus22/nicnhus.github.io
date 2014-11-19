@@ -40,7 +40,7 @@ app.controller('homeController', function($scope) {
 		 "name":"QuickPro",
 		 "url":"http://www.dailymotion.com/video/x27so7v_new-generation-is-taking-the-lead_sport",
 		 "size":"12",
-		 "iframe":'<iframe src="//www.dailymotion.com/embed/video/x27so7v" frameborder="0" allowfullscreen></iframe>'},
+		 "iframe":'<iframe src="//www.dailymotion.com/video/x27so7v_new-generation-is-taking-the-lead_sport" frameborder="0" allowfullscreen></iframe>'},
 		{"img": "images/thumb_fantin.jpg",
 		 "name":"Fantin",
 		 "url":"http://vimeo.com/106747724",
