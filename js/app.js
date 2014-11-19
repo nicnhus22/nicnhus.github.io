@@ -88,8 +88,11 @@ app.controller('homeController', function($scope) {
 
 
 	angular.element(document).ready(function () {
-		$('.fadeIn').each(function(){
-			$(this).fadeIn(1000);
+		$('.fadeIn').each(function(image){
+			setTimeout(function(){
+				$(image).fadeIn(1000);
+			},1000);
+			
 		});
     });
 
