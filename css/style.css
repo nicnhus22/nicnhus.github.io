@@ -13,10 +13,10 @@
 }
 
 #blur_container {
-  position: absolute;
-  height: 100%;
+  position: fixed;
+  top:0;bottom:0;
   width: 0%;
-  background-color:rgba(0,0,0,1);
+  background-color:rgba(0,0,0,0.9);
   z-index: 1000;
   display:block;
   transition:all 2s;
