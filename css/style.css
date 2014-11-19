@@ -195,8 +195,13 @@
 .text-block {
   padding-top:30px;
   padding-bottom: 30px;
+  padding-left:15px;
   font-size: 20px;
   text-align: justify;
+}
+
+.page_title {
+  padding-left: 15px
 }
 
 /* line 150, style.scss */
