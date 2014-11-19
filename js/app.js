@@ -70,7 +70,7 @@ app.controller('homeController', function($scope) {
 
 	 $scope.launchVideo = function(video){
 	 	$('#blur_container').css('width','100%');
-	 	$('#loading_spinner').fadeIn(1500);
+	 	$('#loading_spinner').fadeIn(500);
 	 	setTimeout(function(){
 	 		$('#video_player').html(video.iframe);
 	 	},1000);
