@@ -27,7 +27,7 @@
 }
 
 .fadeIn {
-  display: none;
+  opacity: 0;
 }
 
 
