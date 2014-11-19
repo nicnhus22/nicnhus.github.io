@@ -249,6 +249,13 @@
 }
 
 #loading_spinner {
+  position: absolute;
+  width:100px;
+  height: 100px;
+  margin: auto auto;
+  top:50%;
+  margin-bottom: -50px;
+  background-color:rgba(255,255,255,0.5); 
   -webkit-animation:spin 3s linear infinite;
   -moz-animation:spin 3s linear infinite;
   animation:spin 3s linear infinite;
