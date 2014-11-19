@@ -86,6 +86,8 @@ app.controller('homeController', function($scope) {
 	 	$('#video_player').html('');
 	 };
 
+    $scope.$on('$viewContentLoaded', addCrudControls);
+
 });
 
 
