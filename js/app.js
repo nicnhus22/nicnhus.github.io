@@ -87,6 +87,13 @@ app.controller('homeController', function($scope) {
 	 };
 
 
+	angular.element(document).ready(function () {
+        $(".fadeIn").each(function() {
+	      $(this).hide().fadeIn(1000);
+	      console.log(this);
+	    });
+    });
+
 });
 
 
