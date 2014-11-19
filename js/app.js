@@ -89,7 +89,7 @@ app.controller('homeController', function($scope) {
 
 	angular.element(document).ready(function () {
         $(".fadeIn").each(function() {
-	      $(this).css('visibility','visible').hide().fadeIn(1000);
+	      $(this).fadeIn(1000);
 	      console.log(this);
 	    });
     });
