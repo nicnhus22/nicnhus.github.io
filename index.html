@@ -95,6 +95,14 @@
   $(".sidebar-nav li").click(function(e){
       $("#wrapper").toggleClass("active");
   });
+
+  $( window ).load(function() {
+    $(".fadeIn").each(function() {
+          //setTimeout(function(){
+             $(this).animate({opacity:0.8}, 1000);
+          //},1000);
+      });
+  });
   </script>
   
 </body>

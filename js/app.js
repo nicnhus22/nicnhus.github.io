@@ -88,11 +88,7 @@ app.controller('homeController', function($scope) {
 
 
 	angular.element(document).load(function () {
-        $(".fadeIn").each(function() {
-        	setTimeout(function(){
-        		 $(this).animate({opacity:0.8}, 1000);
-        	},1000);
-	    });
+        
     });
 
 });
