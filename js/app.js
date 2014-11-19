@@ -49,7 +49,7 @@ app.controller('homeController', function($scope) {
 		{"img": "images/thumb_brainwash.jpg",
 		 "name":"BrainWash",
 		 "url":"http://player.vimeo.com/video/92776281",
-		 "size":"6"},,
+		 "size":"6"},
 		 "iframe":'<iframe src="//player.vimeo.com/video/92776281" width="700" allowfullscreen></iframe>'},
 		{"img": "images/thumb_briancon.jpg",
 		 "name":"BrianconHockey",
