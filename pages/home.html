@@ -3,27 +3,18 @@
 	<div data-ng-if="video.size == '6'" class="row">
 
 		<a class="col-md-6" class="video_block" data-ng-click="launchVideo(video)">
-			<img class="spinner" src="{{src}}" imageonload />
-			<span class="loading"> 
-				<img data-ng-src="{{video.img}}" class="img-responsive img-responsive-videos lazy spinner" ng-cloak ><br/>
-			</span> 
+			<img data-ng-src="{{video.img}}" class="img-responsive img-responsive-videos lazy spinner" ng-cloak><br/>
 		</a>
 		
 		<a class="col-md-6" class="video_block" data-ng-click="launchVideo(video)">
-			<img class="spinner" src="{{src}}" imageonload />
-			<span class="loading"> 
-				<img data-ng-src="{{videos[$index+1].img}}" class="img-responsive img-responsive-videos lazy spinner" ng-cloak ><br/>
-			</span>
+			<img data-ng-src="{{videos[$index+1].img}}" class="img-responsive img-responsive-videos lazy spinner" ng-cloak><br/>
 		</a>
 
 	</div>
 	<!-- Large Video -->
 	<div data-ng-if="video.size == '12'" class="row">
 		<a class="col-md-12" class="video_block" data-ng-click="launchVideo(video)">
-			<img class="spinner" src="{{src}}" imageonload />
-			<span class="loading"> 
-				<img data-ng-src="{{video.img}}" class="img-responsive img-responsive-videos lazy spinner" ng-cloak ><br/>
-			</span> 
+			<img data-ng-src="{{video.img}}" class="img-responsive img-responsive-videos lazy spinner" ng-cloak><br/>
 		</a>
 	</div>
 </div>

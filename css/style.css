@@ -26,13 +26,6 @@
   z-index: 1002;
 }
 
-.spinner-hide .loading{
-  visibility: visible;
-}
-.spinner-show .loading{
-  visibility: hidden;
-}
-
 /* line 13, style.scss */
 #sidebar-wrapper {
   margin-left: -250px;
