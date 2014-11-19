@@ -19,14 +19,12 @@ app.config(function($routeProvider) {
 
 		// route for the about page
 		.when('/mylife', {
-			templateUrl : 'pages/mylife.html',
-			controller  : 'myLifeController'
+			templateUrl : 'pages/mylife.html'
 		})
 
 		// route for the contact page
 		.when('/contact', {
-			templateUrl : 'pages/contact.html',
-			controller  : 'contactController'
+			templateUrl : 'pages/contact.html'
 		});
 });
 
