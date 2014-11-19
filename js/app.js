@@ -82,7 +82,7 @@ app.controller('homeController', function($scope) {
 
 	 $scope.closePlayer = function(){
 	 	$('#blur_container').css('width','0');
-	 	$('.video').fadeOut(500);
+	 	$('.video').fadeOut(50);
 	 	$('#video_player').html('');
 	 };
 
