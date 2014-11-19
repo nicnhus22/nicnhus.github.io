@@ -85,6 +85,14 @@ app.controller('homeController', function($scope) {
 	 	$('.video').fadeOut(50);
 	 	$('#video_player').html('');
 	 };
+
+
+	angular.element(document).ready(function () {
+		$('.fadeIn').forEach(function(){
+			$(this).fadeIn(1000);
+		});
+    });
+
 });
 
 
