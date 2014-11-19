@@ -76,19 +76,10 @@ app.controller('homeController', function($scope) {
 
 });
 
-/*
-
-<iframe src="//player.vimeo.com/video/106747724" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-*/
-
-
 
 
 app.controller('myLifeController', function($scope) {
 });
-
-
 
 
 app.controller('contactController', function($scope) {
