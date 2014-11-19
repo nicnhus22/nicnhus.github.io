@@ -86,11 +86,6 @@ app.controller('homeController', function($scope) {
 	 	$('#video_player').html('');
 	 };
 
-
-	angular.element(document).load(function () {
-        
-    });
-
 });
 
 
