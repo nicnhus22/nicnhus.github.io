@@ -62,7 +62,7 @@ app.controller('homeController', function($scope) {
 		 "size":"6"}
 	];
 
-	 function launchVideo(video){
+	 $scope.launchVideo = function(video){
 	 	console.log(video);
 	 }
 
