@@ -65,7 +65,7 @@ app.controller('homeController', function($scope) {
 	 $scope.launchVideo = function(video){
 	 	$('#blur_container').css('width','100%');
 	 	$('.video').fadeIn(3000);
-	 	$('.inner_video').html(video.name);
+	 	//$('.inner_video').html(video.name);
 	 };
 
 	 $scope.closePlayer = function(){
