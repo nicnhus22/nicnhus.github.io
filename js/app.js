@@ -63,7 +63,9 @@ app.controller('homeController', function($scope) {
 	];
 
 	 $scope.launchVideo = function(video){
-	 	console.log(video);
+	 	$('#blur_container').css('width','100%');
+	 	$('.video').fadeIn(3000);
+	 	$('.inner_video').innerHTML(video.name);
 	 }
 
 });
