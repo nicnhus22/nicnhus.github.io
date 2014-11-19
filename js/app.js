@@ -34,17 +34,17 @@ app.config(function($routeProvider) {
 // create the controller and inject Angular's $scope
 app.controller('homeController', function($scope) {
 	$scope.videos = [
-		{"img": "images/thumb_serreche.jpg",
+		{"img": "images/thumb_serreche.jpeg",
 		 "name":"Qui est-ce?",
 		 "url":"http://www.youtube.com/embed/fiuB4QZ9Mtw",
 		 "size":"12",
 		 "iframe":'<iframe src="//www.youtube.com/embed/fiuB4QZ9Mtw" width="700" allowfullscreen></iframe>'},
-		{"img": "images/thumb_superg.jpg",
+		{"img": "images/thumb_superg.jpeg",
 		 "name":"Super G",
 		 "url":"http://player.vimeo.com/video/87712185",
 		 "size":"6",
 		 "iframe":'<iframe src="//player.vimeo.com/video/87712185" width="700" allowfullscreen></iframe>'},
-		{"img": "images/thumb_alaska.jpg",
+		{"img": "images/thumb_alaska.jpeg",
 		 "name":"The High One",
 		 "url":"http://player.vimeo.com/video/107570024",
 		 "size":"6",
