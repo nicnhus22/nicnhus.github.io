@@ -86,6 +86,16 @@ app.controller('homeController', function($scope) {
 	 	$('#video_player').html('');
 	 };
 
+	var init = function () {
+	   console.log('loading page....')
+	};
+	// and fire it after definition
+	init();
+
+	angular.element(document).ready(function () {
+        console.log('Done loading page...');
+    });
+
 });
 
 
