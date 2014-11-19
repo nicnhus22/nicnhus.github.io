@@ -1,0 +1,20 @@
+<div  data-ng-repeat="video in videos" ng-if="(videos[$index].size == '6' && videos[$index+1].size == '6') || video.size == '12'">
+	<!-- Two Small videos -->
+	<div data-ng-if="video.size == '6'" class="row">
+
+		<a href="{{video.url}}" target="_blank" class="col-md-6" class="video_block">
+			<img data-ng-src="{{video.img}}" class="img-responsive img-responsive-videos lazy"><br/>
+		</a>
+		
+		<a href="{{videos[$index+1].url}}" target="_blank" class="col-md-6" class="video_block">
+			<img data-ng-src="{{videos[$index+1].img}}" class="img-responsive img-responsive-videos lazy"><br/>
+		</a>
+
+	</div>
+	<!-- Large Video -->
+	<div data-ng-if="video.size == '12'" class="row">
+		<a href="{{video.url}}" target="_blank" class="col-md-12" class="video_block">
+			<img data-ng-src="{{video.img}}" class="img-responsive img-responsive-videos lazy"><br/>
+		</a>
+	</div>
+</div>

@@ -13,8 +13,8 @@ app.config(function($routeProvider) {
 
 		// route for the home page
 		.when('/', {
-			templateUrl : 'pages/home.html',
-			controller  : 'homeController'
+			templateUrl: (_isNotMobile) ? 'pages/home.html' : 'pages/mobile_home.html',
+			controller : 'homeController'
 		})
 
 		// route for the about page
