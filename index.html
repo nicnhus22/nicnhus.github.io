@@ -98,7 +98,8 @@
 
   $(document).ready(function(){
     $(".fadeIn").each(function() {
-      $(this).fadeIn(1000);
+      $(this).hide().fadeIn(1000);
+      console.log(this);
     });
   });
 
