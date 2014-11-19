@@ -60,7 +60,11 @@ app.controller('homeController', function($scope) {
 		 "name":"WinterGame",
 		 "url":"http://player.vimeo.com/video/83587355",
 		 "size":"6"}
-	]
+	];
+
+	 function launchVideo(video){
+	 	console.log(video);
+	 }
 
 });
 
