@@ -82,8 +82,13 @@ app.controller('homeController', function($scope) {
 
 	 $scope.closePlayer = function(){
 	 	$('#blur_container').css('width','0');
+<<<<<<< HEAD
 	 	$('.video').fadeOut(50);
 	 	$('#video_player').html('');
+=======
+	 	$('.video').fadeOut(500);
+	 	//$('.inner_video').html('');
+>>>>>>> parent of ad1573d... Working version of the responsive player
 	 };
 
 });
