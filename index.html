@@ -28,7 +28,7 @@
 <!-- define angular controller -->
 <body ng-controller="homeController">
 
-  <div id="blur_container">
+  <div id="blur_container" data-ng-click="closePlayer()">
      <img id="loading_spinner" src="images/loading_spinner.png" width="100px" height="100px" alt="Loading..."/>
      <div class="video">
           <div class="inner_close"><i class="fa fa-times" style="font-size:40px;color:rgba(255,255,255,0.8)" data-ng-click="closePlayer()"></i></div>
