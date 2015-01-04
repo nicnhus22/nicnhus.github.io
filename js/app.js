@@ -34,6 +34,11 @@ app.config(function($routeProvider) {
 // create the controller and inject Angular's $scope
 app.controller('homeController', function($scope) {
 	$scope.videos = [
+		{"img": "images/thumb_patrick.jpeg",
+		 "name":"Leadership coaching session",
+		 "url":"http://www.mouratoglou.com",
+		 "size":"12",
+		 "iframe":'<iframe src="//www.mouratoglou.com" width="700" allowfullscreen></iframe>'},
 		{"img": "images/thumb_serreche.jpeg",
 		 "name":"Qui est-ce?",
 		 "url":"http://www.youtube.com/embed/fiuB4QZ9Mtw",
