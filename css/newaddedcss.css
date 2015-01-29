@@ -351,6 +351,12 @@ footer .left-quote {
 	.fullwidth-img { background-size: 210%;background-position-x: -260px;}
 	.overlay { height: 150%; }
 }
+@media screen and (max-width:1300px) {
+   /* Mobile styles */
+   .banner span {
+   		font-size: 30px;
+   }
+}
 
 
 /*                 *
