@@ -272,6 +272,7 @@ footer .left-quote {
 	}
 	.banner {
 		padding-top:50px !important;
+		padding-bottom:50px !important;
 	}
 	.banner span {
 		font-size:17px !important;
@@ -279,7 +280,7 @@ footer .left-quote {
 	}
 	.signup-container {
 		padding-top: 30px;
-		padding-bottom: 30px;
+		padding-bottom: 30%;
 	}
 	.form-box .form-content {
 		width:100%;
