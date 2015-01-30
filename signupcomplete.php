@@ -3,7 +3,7 @@
 <head>
   	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title></title>
@@ -25,37 +25,66 @@
 </head>
 <body>
 	<section class="fullwidth-img">
-		<article class="overlay"></article>
+		<article class="overlay-signup"></article>
 		<article class="layer">
 			<header>
 				<article class="container">
 					<a href="index.php" class="header-logo"><img src="img/trainer-workout-logo.png" alt="trainer-workout logo"></a>
 					<div class="navigation resp-phone-disappear">
 						<ul class="">
-							<li><a href="#">Trainer</a></li>
+							<li><a href="index.php">Trainer</a></li>
 							<li><a href="#">Trainee</a></li>
 							<li class="resp-disappear"><a href="#">Log in</a></li>
 						</ul>
 					</div>
 				</article>
 			</header>
-			<section class="section banner">
+			<section class="section banner singup-padding">
 				<article class="container">
-					<h1>Train Better,<br class="resp-appear"> Be trained better<br>get result faster</h1>
-					<span>Thousands of personal trainers have joined TrainerWorkout in its closed beta</span><br class="resp-appear">
-					<span style="text-align:center;">Sign Up Now, to get early access, and our famous team updates</span>
+					<h1><span class="signup">Thank You for Signing Up with us!</span></h1>
 				</article>
 			</section>
-			<section class="section signup-container">
-				<article class="container">
-					<form action="">
-						<div class="form-box">
-
-							<input type="email" class="form-content margin" placeholder="what is your prefered email address?" required>
-							<button type="submit" class="btn btn-signup">Sign Up</button><br/>
-							<span class="info">Go to trainee sign up</span>
-						</div>
-					</form>
+			<section class="section">
+				<article class="container signup-complete-container">
+					<ul>
+						<li>
+							<div class="img-block">
+								<img src="img/thumb-corinne.jpg" alt="Corinne" class="img-responsive img-circle">
+							</div>
+							<div class="team-member">
+								Corinne,<br>Business Dev
+							</div>
+						</li>
+						<li>
+							<div class="img-block">
+								<img src="img/thumb-alain.jpg" alt="Corinne" class="img-responsive img-circle">
+							</div>
+							<div class="team-member">
+								Alain,<br>Marketing
+							</div>
+						</li>
+						<li>
+							<div class="img-block">
+								<img src="img/thumb-diego.jpg" alt="Corinne" class="img-responsive img-circle">
+							</div>
+							<div class="team-member">
+								Diego,<br>Back-End
+							</div>
+						</li>
+						<li>
+							<div class="img-block">
+								<img src="img/thumb-nicolas.jpg" alt="Corinne" class="img-responsive img-circle">
+							</div>
+							<div class="team-member">
+								Nicolas,<br>Front-End
+							</div>
+						</li>
+					</ul>
+				</article>
+			</section>
+			<section class="section">
+				<article class="container  signup-message">
+					<h1><span class="signup-quote">We'll send you our famous status report every couple of weeks ;-)</span></h1>
 				</article>
 			</section>
 		</article>

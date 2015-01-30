@@ -66,6 +66,15 @@ header {
 	margin-bottom: 105px;
 	text-transform: uppercase;
 }
+.banner h1 .signup {
+	color: #fff;
+	font-weight: 100;
+	font-family: "Open Sans", sans-serif;
+	font-size: 60px;
+	font-style: italic;
+	text-align: center;
+	text-transform: none;
+}
 .banner span {
 	display: block;
 	font-size: 35px;
@@ -141,6 +150,50 @@ header {
 	right: -250px;
 	top: 5px;
 }
+.info a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+
+.signup-complete-container {
+	margin-bottom: 105px;
+}
+.signup-complete-container ul {
+	position: relative;
+	list-style-type: none;
+	float: left;
+	display: block;
+	height: 100%;
+	text-align: center;
+	width: 100%;
+	padding-left: 12%;
+}
+.signup-complete-container ul li {
+	position: relative;
+	float: left;
+	margin: 0 2%;
+	display: inline;
+	font-size: 25px;
+	line-height: 30px;
+	height: 15%;
+	width: 15%;
+}
+.img-block img {
+	width:100%;
+	border: 2px solid #FFFFFF;
+}
+.signup-message h1 {
+	text-align: center;
+	color:#FFF;
+	font-size: 30px;
+	margin-bottom: 105px;
+}
+.team-member {
+	font-weight: bold;
+}
+
+
 
 
 
@@ -233,6 +286,15 @@ footer .left-quote {
 	width: 100%;
 	z-index: 1;
 }
+.overlay-signup{
+	background: #2d3e50;
+	opacity: 0.95;
+	overflow: hidden;
+	position: absolute;
+	top: 0;bottom: 0;
+	width: 100%;
+	z-index: 1;
+}
 .layer
 {
 	position: relative;
@@ -278,6 +340,9 @@ footer .left-quote {
 		font-size:17px !important;
 		line-height: 23px !important;
 	}
+	.banner h1 .signup {
+		font-size: 24px !important;
+	}
 	.signup-container {
 		padding-top: 30px;
 		padding-bottom: 30%;
@@ -291,6 +356,9 @@ footer .left-quote {
 		width:100%;
 		margin-top: 5px;
 	}
+	.team-member {
+		font-size: 13px !important;
+	}
 	footer .contact-container {
 		padding-right: 10px;
 	}
@@ -303,9 +371,14 @@ footer .left-quote {
 		background-size: 350%;
 		background-position-x: -320px;
 	}
+   .singup-padding {
+		padding-top: 80px !important;
+   }
+   header {
+   		padding-top: 80px !important;
+   }
 }
 @media screen and (max-width:890px) {
-   /* Mobile styles */
    .container{
 		padding: 0 20px;
 	}
@@ -319,11 +392,21 @@ footer .left-quote {
 		font-size: 50px;
 		text-align: center;
 	}
+	.banner h1 .signup {
+		font-size: 45px;
+	}
 	.banner span {
 		font-size:28px;
 	}
 	footer .contact-container {
 		padding-right: 20px;
+	}
+	.signup-complete-container ul {
+		padding-left: 2% !important;
+	}
+	.signup-complete-container ul li {
+		height: 20% !important;
+		width: 20% !important;
 	}
 }
 @media screen and (min-width:501px) and (max-width:1100px) {
@@ -339,13 +422,18 @@ footer .left-quote {
 	.banner h1 {
 		text-align: center;
 	}
+	.banner h1 .signup {
+		font-size:50px;
+	}
 	.banner span {
 		font-size:28px;
 	}
 	footer .contact-container {
 		padding-right: 20px;
 	}
-
+	.team-member {
+		font-size: 16px;
+	}
 
 	/* Background */
 	.fullwidth-img { background-size: 210%;background-position-x: -260px;}
@@ -356,6 +444,57 @@ footer .left-quote {
    .banner span {
    		font-size: 30px;
    }
+}
+@media screen and (max-width:400px) {
+	.banner h1 .signup {
+		font-size: 16px !important;
+		font-weight: bold;
+	}
+	.team-member {
+		font-size: 8px !important;
+		line-height: 10px;
+	}
+	.signup-quote {
+		font-size: 14px;
+		font-weight: bold;
+	}
+	.banner {
+		padding-top: 50px !important;
+		padding-bottom: 20px !important;
+	}
+	.signup-complete-container {
+		margin-bottom: 55px;
+	}
+	h1 {
+		line-height: 17px;
+	}
+	header {
+		padding-top: 25px !important;
+	}
+	.signup-complete-container ul {
+		padding-left: 2%;
+	}
+	.signup-complete-container ul li {
+		height: 20% !important;
+		width: 20% !important;
+	}
+}
+
+@media screen and (max-height: 750px){
+	header {
+		padding-top: 70px !important;
+	}
+	.singup-padding {
+		padding-top: 70px !important;
+	}
+	.signup-complete-container {
+		margin-top: 0px !important;
+		margin-bottom: 30px !important;
+	}
+	.signup-message h1 {
+		margin-top: 50px !important;
+		font-size: 25px !important;
+	}
 }
 
 
