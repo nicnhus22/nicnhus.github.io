@@ -75,12 +75,39 @@ header {
 	text-align: center;
 	text-transform: none;
 }
+.banner h1 .beta {
+	color: #fff;
+	font-weight: bold;
+	font-family: "Open Sans", sans-serif;
+	font-size: 60px;
+	text-align: center;
+	font-style: normal;
+	text-transform: none;
+	line-height: 60px;
+}
 .banner span {
 	display: block;
 	font-size: 35px;
 	font-style: italic;
 	line-height: 45px;
 	text-align: center;
+}
+.home-label {
+	display: block;
+	font-size: 35px;
+	font-style: italic;
+	line-height: 45px;
+	text-align: center;
+	margin-bottom: 134px;
+}
+.login-container {
+	padding-top: 60px;
+	padding-bottom: 110px;
+	text-align: center;
+}
+.no-label a {
+	color:#FFFFFF;
+	text-decoration: underline;
 }
 .signup-container {
 	padding-top: 135px;
@@ -104,8 +131,7 @@ header {
 }
 .form-box {
 	position: relative;
-	/*margin: auto auto;
-	width: 668px;*/
+	text-align: center;
 }
 .form-box .form-content {
 	background: rgba(256, 256, 256, 0.5);
@@ -125,6 +151,18 @@ header {
 		-moz-box-sizing:border-box;
 			-webkit-box-sizing:border-box;
 }
+.form-box .email-login {
+	width:363px;
+}
+.form-box .pass-login {
+	width:228px;
+}
+.email-forgot-form input {
+	width:400px;
+}
+.email-forgot-form button {
+	width: 168px;
+}
 .signup-container .btn-signup {
 	background: #1bbc9b;
 	font-size: 26px;
@@ -142,6 +180,14 @@ header {
 	color: #fff;
 	text-decoration: none;
 }
+.signup-container .forgot-pass {
+	position: relative;
+	font-size: 18px;
+	font-style: italic;
+	font-weight: 600;
+	right: -250px;
+	top: 5px;
+}
 .signup-container .info {
 	position: relative;
 	font-size: 18px;
@@ -151,6 +197,54 @@ header {
 	top: 5px;
 }
 .info a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.login-container .btn-signup {
+	background: #1bbc9b;
+	font-size: 26px;
+	padding: 9.5px 37.5px 9.5px 37.5px;
+	text-transform: capitalize;
+	line-height: 1 !important;
+	border:none;
+
+	box-sizing:border-box;
+		-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+}
+.login-container .btn-signup:hover {
+	background: #d35400;
+	color: #fff;
+	text-decoration: none;
+}
+
+.email-forgot-form .btn-submit {
+	background: #1bbc9b;
+	font-size: 26px;
+	padding: 9.5px 37.5px 9.5px 37.5px;
+	text-transform: capitalize;
+	line-height: 1 !important;
+	border:none;
+
+	box-sizing:border-box;
+		-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+}
+.email-forgot-form .btn-submit:hover {
+	background: #d35400;
+	color: #fff;
+	text-decoration: none;
+}
+
+.login-container .forgot-pass {
+	position: relative;
+	font-size: 18px;
+	font-style: italic;
+	font-weight: 600;
+	right: -310px;
+	top: 5px;
+}
+.forgot-pass a {
 	color: #FFFFFF;
 	text-decoration: none;
 }
@@ -193,7 +287,28 @@ header {
 	font-weight: bold;
 }
 
+.forgot-password-container {
+	position:relative;
+	width:825px;height:415px;
+	background-color: #2d3e50;
+	margin: 100px auto
+}
 
+.forgot-password-container h2 {
+	font-size: 50px;
+	color: #FFF;
+	width:100%;
+	text-align: center;
+	padding-top: 35px;
+}
+.forgot-password-container h3 {
+	font-size: 40px;
+	color: #FFF;
+	width: 720px;
+	text-align: center;
+	line-height: 45px;
+	margin: 60px auto;
+}
 
 
 
