@@ -289,7 +289,8 @@ header {
 
 .forgot-password-container {
 	position:relative;
-	width:825px;height:415px;
+	width:825px;height:auto;
+	padding-bottom: 35px;
 	background-color: #2d3e50;
 	margin: 100px auto
 }
@@ -384,12 +385,15 @@ footer .left-quote {
 {
 	position: relative;
 	background: url(../img/bg.jpg) no-repeat;
-	background-size: 100%;
 	color: #fff;
 	font-family: "Open Sans", sans-serif;
-	height: auto;
 	overflow: hidden;
 	width: 100%;
+	background-position:50% 50%; 
+	background-repeat:no-repeat; 
+	-moz-background-size:cover; 
+		-webkit-background-size:cover; 
+			background-size:cover;
 }
 .overlay
 {
@@ -482,10 +486,6 @@ footer .left-quote {
 		top: 10px;
 		right:0;
 	}
-	.fullwidth-img {
-		background-size: 350%;
-		background-position-x: -320px;
-	}
    .singup-padding {
 		padding-top: 80px !important;
    }
@@ -549,10 +549,6 @@ footer .left-quote {
 	.team-member {
 		font-size: 16px;
 	}
-
-	/* Background */
-	.fullwidth-img { background-size: 210%;background-position-x: -260px;}
-	.overlay { height: 150%; }
 }
 @media screen and (max-width:1300px) {
    /* Mobile styles */
@@ -625,4 +621,14 @@ footer .left-quote {
 .underline {
 	text-decoration: underline;
 	color:#FFFFFF;
+}
+.margin-none {
+	margin: 0 !important;
+}
+.form-line-height{
+	line-height: 50px;
+}
+.btn-forgot-pass {
+	width: 482px;
+	color:#FFF;
 }
