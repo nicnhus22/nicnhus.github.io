@@ -6,19 +6,34 @@
 
 
 html, body {
-	height:100%;width:100%;
-	background-image: radial-gradient(90% 49%, #37AEDE 61%, #424A7A 100%);
+	background: url("../img/bg.png") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+		-moz-background-size: cover;
+			-o-background-size: cover;
+				background-size: cover;
 }
 
 
 header {
-	position: relative;
+	position: fixed;
 	width: 100%;
+	height: 90px;
 	padding:30px;
-
 	box-sizing:border-box;
 		-moz-box-sizing:border-box;
 			-webkit-box-sizing:border-box;
+	z-index: 100;
+}
+.blur_overlay {
+	position: fixed;
+	width: 100%;
+	height: 90px;
+	padding:30px;
+	box-sizing:border-box;
+		-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+	background:rgba(83,83,83,0.74);
+	z-index: 99;
 }
 
 /* NAVIGATION */
@@ -103,6 +118,21 @@ header .user_profile .user_name {
 	color: #FFFFFF;
 	float: right;
 	margin-left: 10px;
+}
+
+
+/* MAIN_CONTAINER */
+section.main_container {
+	position: relative;
+	height:100%;
+	padding: 140px;
+}
+
+.main_container .row {
+	position: relative;
+	background:#FFFFFF;
+	height: 200px;width: 100%;
+	margin-bottom: 50px;
 }
 
 /* Responsive */
