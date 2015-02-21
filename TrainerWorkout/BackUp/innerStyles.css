@@ -197,9 +197,10 @@ header {
   box-sizing:border-box;
     -moz-box-sizing:border-box;
       -webkit-box-sizing:border-box;
-  background:rgba(67,74,122,0.8);
+  background:rgba(60,70,100,0.8);
   z-index: 999;
 }
+
 
 /* NAVIGATION */
 header .navigation {}
@@ -291,6 +292,7 @@ header .user_profile .user_name {
   margin-left: 10px;
 }
 
+/* Right DropDown Menu */
 .userdropdown{ display:none;width:160px; background: url(/css/Trainee/topdrop-downbg.png) repeat-x left bottom #fff; border:1px solid #ccc; position:absolute; top:42px; right:0; z-index:9999;}
 
 .userdropdown span{ position:absolute; top: -14px; right:0; width:50px; text-align:center;}
@@ -307,92 +309,18 @@ header .user_profile:hover .userdropdown{ display:block; }
 
 .userdropdown ul li a:hover, .userdropdown ul li.current a{ color:#008FCA; background:#ebebeb;}
 
+/* Notification Dropdown*/
+#notnot:hover .notificationdropdown { display: block; }
 
+.notificationdropdown { display:none; position:absolute; left:0; background:white; width:387px; top: 30px; z-index: 9999; margin-top: 10px; }
 
+.notificationdropdown h2{ font-size:20px; color:#333; text-align:left!important; padding:15px 10px!important; border-bottom:1px solid #ccc;}
 
+.notificationdropdown h2 a{ float:right; margin-top:5px;}
 
+.notificationdropdown span{ position:absolute; top:-14px; left:27px; width:50px; text-align:center;}
 
-/* ============header section==============*/	
-/*
-header section{ padding:0px 20px; min-width:984px;}
-
-.topleft{ left:20px;}
-
-header section.headertop{ background:white; padding-top:20px;  padding-bottom:20px;}
-
-header section.headertop h2{ text-align:center; font-size:24px; margin:0px; padding-top:10px;}
-
-header section.headertop .userdetails{ position:absolute; right:20px; font-size:13px; text-align:left; }
-
-.userdropdown{ display:none;width:160px; background: url(/css/Trainee/topdrop-downbg.png) repeat-x left bottom #fff; border:1px solid #ccc; position:absolute; right:-68px; top:42px; z-index:9999;}
-
-.userdropdown span{ position:absolute; top:-7px; left:50px; width:50px; text-align:center;}
-
-.userdropdown span img{ margin-left:20px;}
-
-header section.headertop .userdetails .profileimg:hover .userdropdown{ display:block; }
-
-.userdropdown ul{ margin:0px 0px 0px 0px; padding:0px;}
-
-.userdropdown ul li{ list-style:none; border-bottom:1px solid #ebebeb;}
-
-.userdropdown ul li a{ padding:12px 20px; display:block; color:#535353; text-decoration:none;}
-
-.userdropdown ul li a:hover, .userdropdown ul li.current a{ color:#008FCA; background:#ebebeb;}
-
-.showDelete:hover .delete2{
-	display:block;
-}
-
-.showDelete:hover .deleteicon2{
-  display:block;
-  cursor: pointer;
-}
-
-
-
-header section.headertop .userdetails span{ display:flex;
-
-
- display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 
-  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) 
-  display: -ms-flexbox;      /* TWEENER - IE 10 
-  display: -webkit-flex;     /* NEW - Chrome 
-  display: flex;   }
-
-header section.headertop .userdetails .profileimg{ float:right; height:34px; width:34px; border:1px solid #cccccc; margin-right:10px; position: relative;}
-
-header section.headertop .userdetails .profileimg a{height:34px; width:34px; overflow:hidden; display: block;}
-
-header section.headertop .userdetails .profileimg .userdropdown a{width: auto; height: auto; overflow: visible;}
-
-header section.headertop h1{ float:left; margin:0px;}
-
-header section.headertop h1 img{ border:none; vertical-align:bottom;}
-
-header section.headertop .emailnotification{ float:left; margin-left:10px;}
-
-.emailnotification ul{ margin:10px 0px 0px 0px; padding:0px;}
-
-.emailnotification ul li{ list-style:none; float:left; margin-left:8px; position:relative;}
-
-.emailnotification ul li img{ vertical-align:bottom;}
-
-.emailnotification ul li span.notification{ display:block; width:20px; height:20px; background:#cc3333; border:1px solid #d3d3d3; line-height:20px; color:white; position:absolute; top:-12px; right:-5px; font-size:12px; text-align:center; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;}
-
-.emailnotification ul li span.notification:hover{ background:red;}
-
-.emailnotification ul li:hover .notificationdropdown{ display:block;}
-
-.notificationdropdown{ display:none; position:absolute; left:-54px; background:white; border:1px solid #ccc; width:387px; top:45px; z-index:9999;}
-
-header section.headertop .notificationdropdown h2{ font-size:20px; color:#333; text-align:left!important; padding:15px 10px!important; border-bottom:1px solid #ccc;}
-
-header section.headertop .notificationdropdown h2 a{ float:right; margin-top:5px;}
-
-.notificatinlist{ padding:10px; cursor:pointer}
-
-.notificatinlist .noticationclose{ float:left; width:20px;}
+.notificationdropdown span img{ margin-left:20px;}
 
 .notificationimg{ float:left; margin:0 0 0 15px; height:53px; width:53px; overflow:hidden;}
 
@@ -403,6 +331,38 @@ header section.headertop .notificationdropdown h2 a{ float:right; margin-top:5px
 .notificationinfo a:hover{ text-decoration:none;}
 
 .notificationinfo a.orange{ color:#ffa611; font-weight:bold; text-decoration:none;}
+
+/* Search Bar */
+.topsearch{ margin-top:7px; float:right; background:white; padding-left:8px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
+
+.topsearch form input{ background:none; border:none; height:35px;}
+
+.srchinput{ width:250px; text-align: left;}
+
+.topsearch form .srchbutton{ 
+  background:#0066cc; 
+  color:#fff; 
+  padding:0px 10px; 
+  border:none; 
+  height:37px; 
+  -webkit-border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -moz-border-radius-bottomright: 4px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.topsearch form .srchbutton:hover{ background:#008fca;}
+
+.showDelete:hover .delete2{
+  display:block;
+}
+
+.showDelete:hover .deleteicon2{
+  display:block;
+  cursor: pointer;
+}
 
 .add{display:none};
 
@@ -422,73 +382,12 @@ header section.headertop .notificationdropdown h2 a{ float:right; margin-top:5px
 
 .buttonbig:hover{background:url(/img/Trainee/close-btn-bh.png) no-repeat left top;}
 
-.notificationdropdown span{ position:absolute; top:-18px; left:30px; width:50px; text-align:center;}
-
-.notificationdropdown span img{ margin-left:20px;}
-
-
 .fixed {
     position: fixed;
     top:0; left:0;
     width: 100%; 
     z-index: 99;
   }
-
-
-
-.oneLineMenu{ display: none}
-
-header section.mainnavholder{ background:#edeff0;}
-
-header section.mainnavholder nav{ margin:0 auto; width:984px;}
-
-header section.mainnavholder nav ul{ text-align:left;}
-
-header section.mainnavholder nav ul li{ list-style:none; display:inline-block; margin:10px 40px 0px 0px; position: relative}
-
-header section.mainnavholder nav ul li a{ color:#333; font-size:17px; padding:10px 0px; display:block; border-bottom:4px solid #edeff0; font-weight:lighter;}
-
-header section.mainnavholder nav ul li a:hover{ color:#3399cc; border-bottom:4px solid #3399cc; text-decoration:none;}
-
-header section.mainnavholder nav ul li.current a{ color:#3399cc; border-bottom:4px solid #3399cc; text-decoration:none; font-weight:bold;}
-
-header section.mainnavholder{ background:#edeff0;}
-
-header section.headertop nav{ margin:0 auto; width:984px;}
-
-header section.headertop nav ul{ text-align:left;}
-
-header section.headertop nav ul li{ list-style:none; display:inline-block; margin:10px 40px 0px 0px;}
-
-header section.headertop nav ul li a{ color:#333; font-size:17px; padding:10px 0px; display:block; border-bottom:4px solid #edeff0; font-weight:lighter;}
-
-header section.headertop nav ul li a:hover{ color:#3399cc; border-bottom:4px solid #3399cc; text-decoration:none;}
-
-header section.headertop nav ul li.current a{ color:#3399cc; border-bottom:4px solid #3399cc; text-decoration:none; font-weight:bold;}
-
-
-.topsearch{ margin-top:7px; float:right; background:white; padding-left:8px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
-
-.topsearch form input{ background:none; border:none; height:35px;}
-
-.srchinput{ width:250px; text-align: left;}
-
-
-
-.topsearch form .srchbutton{ background:#0066cc; color:#fff; padding:0px 10px; border:none; height:37px; -webkit-border-top-right-radius: 4px;
-
--webkit-border-bottom-right-radius: 4px;
-
--moz-border-radius-topright: 4px;
-
--moz-border-radius-bottomright: 4px;
-
-border-top-right-radius: 4px;
-
-border-bottom-right-radius: 4px;}
-
-.topsearch form .srchbutton:hover{ background:#008fca;}
-
 .sociallinks{ margin:-20px; padding:0px;}
 
 .sociallinks li{ list-style:none; background:red; overflow:hidden;}
@@ -499,35 +398,19 @@ border-bottom-right-radius: 4px;}
 
 .sociallinks li:nth-child(2){ background:#ca4638;}
 
-.sociallinks li:nth-child(3){ background:#598dca; -webkit-border-bottom-right-radius: 3px;
-
--webkit-border-bottom-left-radius: 3px;
-
--moz-border-radius-bottomright: 3px;
-
--moz-border-radius-bottomleft: 3px;
-
-border-bottom-right-radius: 3px;
-
-border-bottom-left-radius: 3px;}
+.sociallinks li:nth-child(3){ 
+  background:#598dca; 
+  -webkit-border-bottom-right-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-bottomright: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
 
 .sociallinks li a{ color:#fff; text-decoration:none; line-height:25px; font-weight:lighter; padding:8px 20px 18px 20px; font-size:24px; display:block;}
 
 .sociallinks li a span{ padding-top:10px; display:block;}
-
-
-
-.emailicon{ float:left; display:block; width:27px; height:27px; background:url(/img/Trainee/email-icon.png) no-repeat left bottom; text-indent:-9999px;}
-
-.emailicon:hover{ background:url(/img/Trainee/email-icon.png) no-repeat left top;}
-
-.notificationicon{ float:left; display:block; width:24px; height:24px; background:url(/img/Trainee/notification-icon.png) no-repeat left bottom; text-indent:-9999px; margin-top:3px;}
-
-.notificationicon:hover{ background:url(/img/Trainee/notification-icon.png) no-repeat left top;}
-
-
-
-
 
  .pix {
      float: left;
@@ -547,17 +430,7 @@ border-bottom-left-radius: 3px;}
 }
 .pix img {
     max-height: 75px;
-}*/
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
@@ -1013,7 +886,7 @@ filter:alpha(opacity=30); /* For IE8 and earlier */}
 
 .objectivedetails .socialsharing{ float:right; margin-top:8px;}
 
-.bannerholder{ position:relative; background:url(/img/Trainee/banner-image.jpg) no-repeat center top #000; height:394px; overflow:hidden; margin-bottom:20px;}
+.bannerholder{ position:relative; background:url(/img/Trainee/banner-image.jpg) no-repeat center top #000; height:394px; overflow:hidden; margin-bottom:20px;margin-top: 90px;}
 
 .bannerholder .wrapper{background: url(/img/Trainee/blackbg.png) repeat left top; min-height:253px; margin-top:140px; padding:20px; width:984px;}
 
@@ -1163,7 +1036,7 @@ border-top-right-radius: 6px;}
 
 /* ============footer section==============*/
 
-footer{ background:url(/img/Trainee/footer-bg.jpg) repeat left top; padding:30px 0px; color:#fff;}
+footer{ background:url(/img/Trainee/footer-bg.jpg) repeat left top; padding:30px 0px; color:#fff; positio}
 
 .footerblock{ float:left; width:18%; margin-right:10px;}
 
@@ -3202,5 +3075,12 @@ height:auto !important;
   display: block;
 }
 
+
+/* Responsive */
+@media screen and (max-width:1250px) {
+   .resp-disappear {
+    display: none !important;
+  }
+}
 
 

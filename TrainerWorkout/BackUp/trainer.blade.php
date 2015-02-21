@@ -58,15 +58,35 @@
 </head>
 <body>
 <div class="systemMessages"></div>
+
     <!-- header area starts here -->
     <div id="blur_overlay" class="hidden"></div>
     <header>
       <section class="icon_block">
-        <a href=""><img src="/img/icon_logo.png" width="68px" height="39px"></a>
+        <a href="/Trainer/"><img src="/img/icon_logo.png" width="68px" height="39px"></a>
         <div class="quote resp-disappear">TrainerWorkout.com</div>
         <ul>
-          <li id="mailnot"><a href=""><img src="/img/icon_env.png" width="30px" height="22px"></a></li>
-          <li id="notnot"><a href=""><div class="icon_notification">0</div></a></li>
+          <li id="mailnot">
+            <a href="/Trainer/Mail/" class="fancybox fancybox.iframe" id="mailpopup">
+              <span style="display:none" id="messagesNumber" class="notification"></span>
+              <img src="/img/icon_env.png" width="30px" height="22px">
+            </a>
+          </li>
+          <li id="notnot" onmouseover="showLastNotifications();">
+            <a href="#">
+              <span style="display:none" id="notificationsNumber" class="notification"></span>
+            </a>
+            <a href="#">
+              <div class="icon_notification">
+                <span id="notificationsNumber" class="notification">0</span>
+              </div>
+            </a>
+            <div class="notificationdropdown">
+              <span><img src="/img/Trainee/notification-arrow.png" alt="top arrow" /></span>
+              <h2> Notifications </h2>
+              <div id="notification_preloader" class="notification_preloader"></div>
+            </div>
+          </li>
         </ul>
       </section>
       <section class="navigation">
@@ -97,40 +117,10 @@
           </div>
       </section>
     </header>
-<!-- 
-    
-</div>
-
-<div class="topleft">
-    <h1><a href="/Trainer/"><img src="/img/Trainee/trainer-workout-logo.png" alt="Trainer Workout logo"></a></h1>
-    <div class="emailnotification">
-        <ul>
-
-            <li id="mailnot">
-                <a href="/Trainer/Mail/" class="fancybox fancybox.iframe" id="mailpopup"><span style="display:none" id="messagesNumber" class="notification"></span></a>
-                <a href="/Trainer/Mail" id="mailpopup" class="emailicon fancybox">email</a>
-            </li>
-            <li id="notnot">
-                <a href="#"><span style="display:none" id="notificationsNumber" class="notification"></span></a>
-                <a href="#" class="notificationicon" onmouseover="showLastNotifications();">notification</a>
-                <div class="notificationdropdown">
-                    <span><img src="/img/Trainee/notification-arrow.png" alt="top arrow" /></span>
-                    <h2>
-                              <!--<a href="#" class="buttonbig">Close button</a>
-                              Notifications
-                            </h2>
-                    <div id="notification_preloader" class="notification_preloader"></div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
--->
+    <!-- End Of Header -->
 
          @yield("content")
 
-    
-    
     <!-- footer area starts here -->
     <footer>
         <div class="wrapper clearfix">
