@@ -6,6 +6,7 @@ article,aside,figure,footer,header,hgroup,nav,section{display:block}
 
 img,object,embed{max-width:100%}
 
+
 html{overflow-y:scroll}
 
 ul{list-style:none}
@@ -94,13 +95,24 @@ input[type=radio],.ie6 input{vertical-align:text-bottom}
 
 html, body{ margin:0px; padding:0px;}
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body{
-background: url(/img/inner_bg.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-    -moz-background-size: cover;
-      -o-background-size: cover;
-        background-size: cover;
- color:#7d7d7d; font-size:14px;line-height:18px; font-family:"HelveticaNeue MediumExt", Helvetica, Arial, "Lucida Grande", sans-serif; -webkit-font-smoothing: antialiased;}
+  margin:0 0 200px;
+  background: url(/img/inner_bg.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+      -moz-background-size: cover;
+        -o-background-size: cover;
+          background-size: cover;
+  color:#7d7d7d; 
+  font-size:14px;
+  line-height:18px; 
+  font-family:"HelveticaNeue MediumExt", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
 
 a{color:#008fca; text-decoration:none;}
 
@@ -182,6 +194,7 @@ h6{ margin:0px 0px 10px 0px; font-size:14px; color:#3399cc; line-height:20px;}
 header {
   position: fixed;
   width: 100%;
+  top:0;
   height: 90px;
   padding:30px;
   box-sizing:border-box;
@@ -191,6 +204,7 @@ header {
 }
 #blur_overlay {
   position: fixed;
+  top:0;
   width: 100%;
   height: 90px;
   padding:30px;
@@ -332,6 +346,8 @@ header .user_profile:hover .userdropdown{ display:block; }
 
 .notificationinfo a.orange{ color:#ffa611; font-weight:bold; text-decoration:none;}
 
+#notificationsNumber { font-weight: 600; }
+
 /* Search Bar */
 .topsearch{ margin-top:7px; float:right; background:white; padding-left:8px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;}
 
@@ -447,7 +463,7 @@ section#content{ padding:90px 0px 30px 0px;}
 	display:table;
 }
 
-.widgets{ background:white; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; border:1px solid #efefef; margin-bottom:16px; padding:20px; min-height:200px; position:relative}
+.widgets{ background:white; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; border:1px solid #efefef; margin-bottom:16px; padding:20px; min-height:150px;}
 
 
 
@@ -463,7 +479,7 @@ section#content{ padding:90px 0px 30px 0px;}
 
 .widgetmrgright{ margin-right:16px;}
 
-.widgets h1{ font-size:24px; color:#3399cc; border-bottom:1px solid #e5e5e5; padding-bottom:10px; margin-bottom:15px;}
+.widgets h1{ font-family: 'Open Sans', sans-serif; font-size:24px; color:#424A7A; border-bottom:1px solid #e5e5e5; padding-bottom:10px; margin-bottom:15px;}
 
 /*.graphholder{ text-align:center; padding-bottom:10px; margin-bottom:15px; float:right; width:700px;}*/
 .graphholder{ text-align:center;  float:right; width:700px;}
@@ -722,7 +738,9 @@ filter:alpha(opacity=30); /* For IE8 and earlier */}
 
 /* ========= advance search ======== */
 
-.steps{ margin-bottom:20px; padding-bottom:20px; border-bottom:1px solid #d2d2d2; display: none}
+.steps{ margin-bottom:20px; display: none}
+
+.steps_border_bottom {border-bottom:1px solid #d2d2d2;}
 
 .steps h3{ margin-bottom:30px;}
 
@@ -1036,7 +1054,14 @@ border-top-right-radius: 6px;}
 
 /* ============footer section==============*/
 
-footer{ background:url(/img/Trainee/footer-bg.jpg) repeat left top; padding:30px 0px; color:#fff; positio}
+footer{ 
+  position:absolute;
+  left:0;bottom: 0;
+  width: 100%;
+  background:url(/img/Trainee/footer-bg.jpg) repeat left top; 
+  padding:30px 0px; 
+  color:#fff; 
+}
 
 .footerblock{ float:left; width:18%; margin-right:10px;}
 
@@ -1570,11 +1595,28 @@ background-position: center bottom;}
 
 .nameworkout fieldset{ border:0px; margin:0px; padding:0px;}
 
-.nameworkoutinput{ width:400px; height:29px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; border:1px solid #e1e1e1; margin-right:22px; text-align:center; color:#666; font-size:18px; box-shadow: inset 0 5px 5px -5px 
+.nameworkoutinput{ 
+  text-align: left;
+  width:400px; 
+  height:29px; 
+  -webkit-border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  border-radius: 3px; 
+  border:1px solid #e1e1e1; 
+  margin-right:22px; 
+  color:#666; 
+  font-size:18px; 
+  box-shadow: inset 0 5px 5px -5px ;#ccc;
+}
 
-#ccc;}
-
-.createcustomworkout .greybtn{padding:6px 45px; font-weight:bold; float:right;}
+.createcustomworkout .greybtn{
+  padding:6px 45px; 
+  font-weight:bold; 
+  float:none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
 
 .createcustomworkout .identifyobjectives{width:640px;}
 
@@ -1607,11 +1649,8 @@ background-position: center bottom;}
 }
 
 .createcustomworkout .customworkout:hover{
-
    -moz-box-shadow:    inset 0 0 40px #16668e;
-
    -webkit-box-shadow: inset 0 0 40px #16668e;
-
    box-shadow:         inset 0 0 40px #16668e;
 
 }
@@ -1620,11 +1659,47 @@ background-position: center bottom;}
 
 .createcustomworkout .exercisesimages{width:189px; height:189px; margin-left:30px;}
 
-.createcustomworkout .additionalsearch{float:none; margin:15px 0 35px;}
+.createcustomworkout .additionalsearch{
+  text-align: center;
+  float:none; 
+  margin:15px 0 35px;
+}
+.createcustomworkout .additionalsearch span{
+  margin-right:0 !important; 
+  float:none !important;
+  font-size:19px;
+  margin-bottom: 20px;
+}
+.createcustomworkout .advsearch {
+  margin: auto auto;
+  border: 1px solid #e3e3e3;
+  height: 32px;
+  overflow: hidden;
+  width: 375px;
+}
+.createcustomworkout .topsearch {
+  float: none !important;
+  background: white;
+  padding-left: 0 !important;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.createcustomworkout .advsearch form {
+  width: 383px;
+  position: relative;
+  margin: auto auto;
+  float: none;
+}
 
-.createcustomworkout .additionalsearch span{font-size:19px;}
-
-.createcustomworkout .srchinput{width:305px;}
+.createcustomworkout .srchinput{
+  width:300px;
+  font-size: 18px;
+  padding-left: 10px;
+  box-sizing:border-box;
+    -moz-box-sizing:border-box;
+      -webkit-box-sizing:border-box;
+}
 
 .pull{width:189px; float:left; display:inline-block; margin-left:30px; margin-bottom:12px;}
 
@@ -3074,7 +3149,9 @@ height:auto !important;
 .block{
   display: block;
 }
-
+.input_padding {
+  padding:8px 10px;
+}
 
 /* Responsive */
 @media screen and (max-width:1250px) {
