@@ -1,0 +1,612 @@
+@extends('layouts.'.strtolower($user->userType))
+@section('content')
+<?php
+   $sum_ex = 0;
+   $sum_sets = 0;
+   $sum_time = 0;
+   $sum_reps = 0;
+   $sum_ex_2 = 0;
+   $sum_sets_2 = 0;
+   $sum_time_2 = 0;
+   $sum_reps_2 = 0;
+   
+   ?>
+<section id="content" class="clearfix">
+   <div class="wrapper">
+   <div class="widgets fullwidthwidget shadow">
+
+      
+      <!-- All Done -->
+      <div class="fltright">
+        <a href="javascript:void(0)" onClick="completeWorkout()" class="orangebtn a_workout_button btn">
+          <i class="fa fa-check"></i>
+          all done
+        </a>
+      </div>
+      <!-- Print Workout -->
+      <div class="fltright">
+        <a target="_blank" href="/Workout/PrintWorkout/{{ $workout->id }}/" class="greenbtn a_workout_button btn">
+          <i class="fa fa-print"></i>
+          print
+        </a>
+      </div>
+      <!-- Share Workout -->
+      <div class="fltright">
+        <a href="/Workout/ShareWorkout/{{ $workout->id }}/" class="fancybox greenbtn a_workout_button btn">
+          <!-- <img src="/img/icon_share_white.png" style="margin-bottom: 1px;" width="25px" height="18px"/> -->
+          <i class="fa fa-share-alt"></i>
+          share
+        </a>
+      </div>
+
+      <h1>{{ $workout->name }}</h1>
+
+      <div class="workoutdays clearfix">
+         @foreach($exercises as $exercise)
+         <?php $sum_ex++; ?>
+         @if($exercise->exercises->bodygroupId != 18)
+         <div class="dayitemsdetails clearfix" exercise="">
+            <div class="dayworkouts clearfix">
+              <div class="wo_notification">1</div>
+              <div class="workout_image_container">
+                <ul>
+                  <li>
+                     <img  src="/{{ Helper::image($exercise->exercises->image) }}" alt="{{ $exercise->exercises->name }}">
+                  </li>
+                  <li>
+                     <?php
+                        $customImages = ExercisesImages::where("userId",$workout->userId)->where("exerciseId",$exercise->exercises->id)->orderBy("id","Desc")->get();
+                        ?>
+                     @if(count($customImages) > 0)
+                     <?php $lastImageAdded = $customImages[0]; ?>
+                     <img id="customImage{{ $exercise->id }}"  src="/{{ Helper::image($lastImageAdded->image) }}" alt="Trainer Workout">
+                     @else
+                     @if($exercise->exercises->image2 != "")
+                     <img  id="customImage{{ $exercise->id }}"  src="/{{ Helper::image($exercise->exercises->image) }}" alt="Trainer Workout - ">
+                     @endif
+                     @endif
+                  </li>
+               </ul>
+              </div>
+              <div class="workout_name_container">
+                 <h5>{{ $exercise->exercises->name }}</h5>
+              </div>
+              
+
+
+               <!-- <a href="/Workout/exercisePerformance/{{ $exercise->id }}"  class="fancybox lightgreybtn shadow">Performance</a> <a href="javascript:void(0)" onClick="$('.addPicture{{ $exercise->id }}').slideDown()"  class="fltright lightgreybtn shadow">Add your custom picture</a>
+               @if($exercise->notes != "")
+               <div style="display:block; margin-top:5px;"><strong>Notes: </strong>{{ $exercise->notes  }}</div>
+               @endif
+               <div class=" addPicture addPicture{{ $exercise->id }}" style="display:none">
+                  {{ Form::open(array('url' => '/Workout/addCustomPicture/'), array('files'=> true)); }}
+                  <input type="file" name="customPicture" id="customPicture{{ $exercise->id }}"> <label style="float:left"><input type="checkbox" name="availability" /> Public</label> <input type="submit" onClick="uploadCustomPicture($(this),{{ $exercise->id }})" value="Add" class="bluebtn fltright"/> <input style="display:none" type="submit" value="Add" class="bluebtn fltright"/>
+                  <input type="hidden" name="workoutExercise" id="workoutsExercisesId{{ $exercise->id }}" value="{{ $exercise->id }}">
+                  {{ Form::close() }}
+               </div> -->
+
+
+            </div>
+            <div class="dayworkoutstable">
+               <table class="tabulardata setsInformation exerciseTable_{{ $exercise->id }}" cellspacing="0" cellpadding="0">
+                  <thead>
+                    <tr>
+                       <th>Date</th>
+                       <th>Set</th>
+                       <th>Repetition</th>
+                       <th>Weight</th>
+                       <th><strong>Done</strong></th>
+                    </tr>
+                  </thead>
+                  
+                  <?php $sets = $workout->getSets($exercise->id); ?>
+                  <?php 
+                     $sum_sets += $exercise->sets;
+                     
+                     ?>
+                  @if(count($sets) > $exercise->sets)
+                  <tr>
+                     <td colspan="5" style="background-color:white">
+                        <!--<span class="hrborder"></span>-->
+                        <a class='bluebutton moreButton' href='javascript: void(0)' onclick='showMore("{{ $exercise->id }}",$(this))' status='hide'>History</a>
+                     </td>
+                  </tr>
+                  @endif
+                  <?php  $counter = 0; 
+                     ?>
+                  @foreach($sets as $set)
+                  <?php
+                     if($set->completed == 1){
+                       $sum_sets_2++;
+                       $sum_time_2 += $set->rest;
+                       $sum_reps_2 += $set->reps;
+                     } else {
+                       $sum_time += $set->rest;
+                       $sum_reps += $set->reps;
+                     }
+                     ?>                                 
+                  <tr class="set_{{ $exercise->id }} {{ ($counter >= count($sets) - $exercise->sets ? "last" : "hide" ) }}">
+                  @if($counter%$exercise->sets == 0)
+                  <td rowspan='{{ $exercise->sets }}'>{{ ($counter >= count($sets) - $exercise->sets ? "New" : Helper::date($set->updated_at) ) }}</td>
+                  @endif                            
+                  <td>{{ $set->number }}</td>
+                  <td><span class="view reps {{ ($set->completed == 1 ? "" : "hide") }}">{{ $set->reps }}</span>
+                     <input name=""  type="text"  class="inputbox-small center input edit reps {{ ($set->completed == 1 ? "hide" : "") }}" value="{{ $set->reps }}"  />
+                     <input name=""  type="text"  class="inputbox-small center input edit rest hide" value="{{ $set->rest }}"  />
+                     <input name=""  type="text"  class="inputbox-small center input edit idSet hide" value="{{ $set->id }}"  />
+                     <input name=""  type="text"  class="inputbox-small center input edit idExercise hide" value="{{ $exercise->id }}"  />
+                  </td>
+                  <td><span class="view weight {{ ($set->completed == 1 ? "" : "hide") }}">{{ ($set->weight == "" ? 0 : $set->weight) }}</span>
+                     <input name="set_weight[{{ $set->id }}]"  type="text"  class="inputbox-small center input edit weight {{ ($set->completed == 1 ? "hide" : "") }}" value="{{ $set->weight }}"  />
+                  </td>
+                  <td><input name="set_completed[{{ $set->id }}]" {{ ($set->completed == 1 ? "checked='checked'" : "") }} {{ ($set->completed == 1 ? "disabled='disabled'" : "") }} onClick="completeSingleSet({{ $set->id }},$(this))" type="checkbox" value="Yes" /></td>
+                  </tr>
+                  <?php $counter++; ?>
+                  @endforeach
+               </table>
+            </div>
+            <div class="useroption"> <a href="javascript:void(0)"  onclick='exerciseCompleted({{ $exercise->id }},$(this)); return false;'  class="saveicon">Completed<br>
+               </a> <br/></span>  </span> <a href="javascript:void(0)" onClick="editModeAllSets({{ $exercise->id }},$(this))" class="editicon" status='edit'>Click to edit all</a> 
+            </div>
+         </div>
+         @else
+         <div class="dayitemsdetails clearfix" exercise="">
+            <div class="dayworkouts clearfix">
+               <h5>{{ $exercise->exercises->name }}</h5>
+               <ul>
+                  <li>
+                     <a href="" class="fancy"><img  src="/{{ Helper::image($exercise->exercises->image) }}"alt="{{ $exercise->exercises->name }}"></a>
+                  </li>
+                  <li>
+                     @if($exercise->exercises->image2 != "")
+                     <a href="//fb/ViewExercise//" class="fancy"><img  src="/" alt="Trainer Workout - "></a>
+                     @endif
+                  </li>
+               </ul>
+               <a href="/Workout/exercisePerformance/{{ $exercise->id }}"  class="fancybox lightgreybtn shadow">Performance</a> <a href="javascript:void(0)" onClick="$('.addPicture{{ $exercise->id }}').slideDown()"  class="fltright lightgreybtn shadow">Add your custom picture</a>
+               @if($exercise->notes != "")
+               <div style="display:block; margin-top:5px;"><strong>Notes: </strong> {{ $exercise->notes  }}</div>
+               @endif
+            </div>
+            <div class="dayworkoutstable">
+               <table width="100%" border="0" class="tabulardata setsInformation exerciseTable_{{ $exercise->id }}" cellspacing="0" cellpadding="0">
+                  <tr>
+                     <th width="15%">Date</th>
+                     <th width="10%">Set</th>
+                     <!-- <th width="10%">HR</th> -->
+                     <th width="20%">Time</th>
+                     <th width="20%">Distance</th>
+                     <th width="20%">Speed</th>
+                     <th width="15%"><strong>Done</strong></th>
+                  </tr>
+                  <?php $sets = $workout->getSets($exercise->id); ?>
+                  <?php 
+                     $sum_sets += $exercise->sets;
+                     
+                     ?>
+                  @if(count($sets) > $exercise->sets)
+                  <tr>
+                     <td colspan="6" style="background-color:white">
+                        <!--<span class="hrborder"></span>-->
+                        <a class='bluebutton moreButton' href='javascript: void(0)' onclick='showMore("{{ $exercise->id }}",$(this))' status='hide'>History</a>
+                     </td>
+                  </tr>
+                  @endif
+                  <?php  $counter = 0; 
+                     ?>
+                  @foreach($sets as $set)
+                  <?php
+                     if($set->completed == 1){
+                       $sum_sets_2++;
+                       $sum_time_2 += $set->time;
+                       $sum_reps_2 += $set->reps;
+                     } else {
+                       $sum_time += $set->time;
+                       $sum_reps += $set->reps;
+                     }
+                     ?>                                 
+                  <tr class="set_{{ $exercise->id }} {{ ($counter >= count($sets) - $exercise->sets ? "last" : "hide" ) }}">
+                  @if($counter%$exercise->sets == 0)
+                  <td rowspan='{{ $exercise->sets }}'>New</td>
+                  @endif                            
+                  <td>{{ $set->number }}</td>
+                  <td><span class="view time {{ ($set->completed == 1 ? "" : "hide") }}">{{ ($set->time == "" ? 0 : $set->time/60) }} min</span>
+                     <input style="width:60px;" name="time[{{ $set->id }}]"  type="text"  class="center input edit time {{ ($set->completed == 1 ? "hide" : "") }}" value="{{ $set->time/60 }}"  /> min
+                  </td>
+                  <td><span class="view distance {{ ($set->completed == 1 ? "" : "hide") }}">{{ $set->distance }}</span>
+                     <input name=""  type="text"  class="inputbox-small center input edit distance {{ ($set->completed == 1 ? "hide" : "") }}" value="{{ $set->distance }}"  />
+                     <input name=""  type="text"  class="inputbox-small center input edit rest hide" value="{{ $set->rest }}"  />
+                     <input name=""  type="text"  class="inputbox-small center input edit idSet hide" value="{{ $set->id }}"  />
+                     <input name=""  type="text"  class="inputbox-small center input edit idExercise hide" value="{{ $exercise->id }}"  />
+                  </td>
+                  <td><span class="view speed {{ ($set->completed == 1 ? "" : "hide") }}">{{ ($set->speed == "" ? 0 : $set->speed) }}</span>
+                     <input style="width:50px;" name="set_speed[{{ $set->id }}]"  type="text"  class=" center input edit speed {{ ($set->completed == 1 ? "hide" : "") }}" value="{{ $set->speed }}"  />
+                  </td>
+                  <!-- <td><span class="view hr {{ ($set->completed == 1 ? "" : "hide") }}">{{ ($set->weight == "" ? 0 : $set->hr) }}</span>
+                     <input style="width:50px;" name="set_hr[{{ $set->id }}]"  type="text"  class="inputbox-small center input edit hr {{ ($set->completed == 1 ? "hide" : "") }}" value="{{ $set->hr }}"  />
+                     </td> -->
+                  <td><input name="set_completed[{{ $set->id }}]" {{ ($set->completed == 1 ? "checked='checked'" : "") }} {{ ($set->completed == 1 ? "disabled='disabled'" : "") }} onClick="completeSingleSet({{ $set->id }},$(this))" type="checkbox" value="Yes" /></td>
+                  </tr>
+                  <?php $counter++; ?>
+                  @endforeach
+               </table>
+            </div>
+            <div class="useroption"> <a href="javascript:void(0)"  onclick='exerciseCompleted({{ $exercise->id }},$(this)); return false;'  class="saveicon">Completed<br>
+               </a> <br/></span> <img src="/Trainee/imgv2/or.png" alt=""> </span> <a href="javascript:void(0)" onClick="editModeAllSets({{ $exercise->id }},$(this))"  class="editicon" status='edit'>Click to edit all</a> 
+            </div>
+         </div>
+      </div>
+      @endif
+      @endforeach
+   </div>
+</section>
+@endsection
+@section('scripts')
+<script type="text/javascript">
+   <?php 
+      if ($sum_reps > 0){
+        $sum_ex_2 = number_format($sum_reps_2/$sum_reps,0);
+      }
+      
+      $sum_time = $sum_time / 60;
+      if ($sum_time > 0){
+        $sum_time = number_format($sum_time);
+      }
+      
+      $sum_time_2 = $sum_time_2 / 60;
+      if ($sum_time_2 > 0){
+        $sum_time_2 = number_format($sum_time_2);
+      }
+      ?>
+   
+   $("#sum_ex").html(<?php echo $sum_ex; ?>);
+   $("#sum_sets").html(<?php echo $sum_sets; ?>);
+   $("#sum_reps").html(<?php echo $sum_reps; ?>);
+   $("#sum_time").html('<?php echo $sum_time; ?> min' );
+   
+   $("#sum_ex_2").html(<?php echo $sum_ex_2; ?>);
+   $("#sum_sets_2").html(<?php echo $sum_sets_2; ?>);
+   $("#sum_reps_2").html(<?php echo $sum_reps_2; ?>);
+   $("#sum_time_2").html('<?php echo $sum_time_2; ?> min' );
+   
+   
+   function showMore(exerciseId,obj){
+     if($(obj).attr("status") == "hide"){
+       $(obj).attr("status","visible");
+       $(obj).text("Hide");
+       $(".set_"+exerciseId).show();
+     } else {
+       $(".set_"+exerciseId).hide();
+       $(".set_"+exerciseId+".last").show();
+       $(obj).attr("status","hide");
+       $(obj).text("More");
+   
+     }
+     
+   }
+   
+   function viewModeRow(obj){
+       var tr = $(obj).closest("tr");
+       $(tr).find(".view.reps").text($(tr).find(".edit.reps").val());
+       $(tr).find(".view.weight").text($(tr).find(".edit.weight").val());
+       $(tr).find(".view.reps").show();
+       $(tr).find(".edit.reps").hide();
+       $(tr).find(".view.weight").show();
+       $(tr).find(".edit.weight").hide();
+   
+       $(tr).find(".view.speed").text($(tr).find(".edit.speed").val());
+       $(tr).find(".view.distance").text($(tr).find(".edit.distance").val());
+       $(tr).find(".view.time").text($(tr).find(".edit.time").val());
+       $(tr).find(".view.speed").show();
+       $(tr).find(".view.time").show();
+       $(tr).find(".view.distance").show();
+       $(tr).find(".edit.time").hide();
+       $(tr).find(".edit.distance").hide();
+       $(tr).find(".edit.speed").hide();
+   }
+   
+   function editModeRow(obj){
+       var tr = $(obj).closest("tr");
+       //$(tr).find(".view.reps").text($(tr).find(".edit.reps").val());
+       //$(tr).find(".view.weight").text($(tr).find(".edit.weight").val());
+       $(tr).find(".view.reps").hide();
+       $(tr).find(".edit.reps").show();
+       $(tr).find(".view.weight").hide();
+       $(tr).find(".edit.weight").show();
+   
+       $(tr).find(".view.speed").hide();
+       $(tr).find(".edit.speed").show();
+       $(tr).find(".view.distance").hide();
+       $(tr).find(".edit.distance").show();
+       $(tr).find(".view.time").hide();
+       $(tr).find(".edit.time").show();
+     
+   }
+   
+   function editModeAll(obj){
+       $(obj).find(".view.reps").hide();
+       $(obj).find(".edit.reps").show();
+       $(obj).find(".view.weight").hide();
+       $(obj).find(".edit.weight").show();
+   
+       $(obj).find(".view.speed").hide();
+       $(obj).find(".edit.speed").show();
+       $(obj).find(".view.distance").hide();
+       $(obj).find(".edit.distance").show();
+       $(obj).find(".view.time").hide();
+       $(obj).find(".edit.time").show();
+   
+       //$(obj).find(".view.hr").hide();
+       //$(obj).find(".edit.hr").show();
+   }
+   
+   function viewModeAll(exerciseId){
+       $(".exerciseTable_"+exerciseId+" tr").each(function(i,obj){
+         $(this).find(".view.reps").text($(this).find(".edit.reps").val());
+         $(this).find(".view.weight").text($(this).find(".edit.weight").val());
+         $(this).find(".view.reps").show();
+         $(this).find(".edit.reps").hide();
+         $(this).find(".view.weight").show();
+         $(this).find(".edit.weight").hide();
+   
+         $(this).find(".view.distance").text($(this).find(".edit.distance").val());
+         $(this).find(".view.speed").text($(this).find(".edit.speed").val());
+         $(this).find(".view.time").text($(this).find(".edit.time").val());
+    
+         $(obj).find(".view.speed").show();
+         $(obj).find(".edit.speed").hide();
+         $(obj).find(".view.time").show();
+         $(obj).find(".edit.time").hide();
+         $(obj).find(".view.distance").show();
+         $(obj).find(".edit.distance").hide();
+         //$(obj).find(".view.hr").show();
+         //$(obj).find(".edit.hr").hide();
+   
+       });
+   }
+   
+   function completeWorkout(){
+     $.ajax(
+           {
+               url : "/Workout/workoutCompleted",
+               type: "POST",
+               data: {
+                   workoutId: {{ $workout->id }}
+               },
+               success:function(data, textStatus, jqXHR) 
+               {
+                   successMessage(data);
+                   viewModeAllWorkout();
+                   $(".dayitemsdetails").find("input[type=checkbox]").prop("checked",true);
+               },
+               error: function(jqXHR, textStatus, errorThrown) 
+               {
+                   errorMessage(jqXHR.responseText);
+               },
+           });
+   }
+   
+   function viewModeAllWorkout(){
+         $(".workoutdays").find(".view.reps").text($(this).find(".edit.reps").val());
+         $(".workoutdays").find(".view.weight").text($(this).find(".edit.weight").val());
+         $(".workoutdays").find(".view.reps").show();
+         $(".workoutdays").find(".edit.reps").hide();
+         $(".workoutdays").find(".view.weight").show();
+         $(".workoutdays").find(".edit.weight").hide();
+     
+   }
+   
+   function completeSingleSet(setId,obj){
+     weight = $(obj).closest("tr").find(".edit.weight").val();
+     reps = $(obj).closest("tr").find(".edit.reps").val();
+     rest = $(obj).closest("tr").find(".edit.rest").val();
+     $.ajax(
+           {
+               url : "/Workout/saveSingleSet",
+               type: "POST",
+               data: {
+                   set:setId,
+                   weight:weight,
+                   rest:rest,
+                   reps:reps,
+                   workoutId: {{ $workout->id }}
+               },
+               success:function(data, textStatus, jqXHR) 
+               {
+                   successMessage(data);
+                   viewModeRow(obj);
+               },
+               error: function(jqXHR, textStatus, errorThrown) 
+               {
+                   errorMessage(jqXHR.responseText);
+               },
+           });
+   }
+   
+   function uploadCustomPicture(element,workoutsExercisesId){
+     var handler = $(element);
+     tForm = handler.closest("form");
+   
+   
+     tForm.submit(function(e)
+     {
+       e.preventDefault(); //STOP default action
+       e.stopImmediatePropagation();
+     
+         //var postData = $(this).serializeArray();
+         var formURL = $(this).attr("action");
+         var preload;
+         $.ajax(
+         {
+             url : formURL,
+             type: "POST",
+             data: new FormData( this ),
+           processData: false,
+           contentType: false,
+             beforeSend:function() 
+             {
+                   preLoad = showLoadWithElement(handler);
+                   },
+             success:function(data, textStatus, jqXHR) 
+             {
+                 if(data["image"] != ""){
+                   $("#customImage"+workoutsExercisesId).attr("src","/"+data["image"]);
+                 }
+                  $("#customImage"+workoutsExercisesId).attr("src");
+                 if(data["message"] != ""){
+                     successMessage(data["message"]);
+                 }
+                 if(data["error"] != ""){
+                     errorMessage(data["error"]);
+                 }
+                 alert(data);
+                 hideLoadWithElement(preLoad);
+             },
+             complete:function() 
+             {
+                               hideLoadWithElement(preLoad);
+                   },
+             error: function(jqXHR, textStatus, errorThrown) 
+             {
+               errorMessage(jqXHR.responseText);
+               return false;
+             },
+             statusCode: {
+               500: function() {
+                 if(jqXHR.responseText != ""){
+                   errorMessage(jqXHR.responseText);
+                 }else {
+                   
+                 }
+                   
+               }
+           }
+         });
+         
+     }
+   );
+   }
+   
+   function exerciseCompleted(exerciseWorkout,obj){
+     var table = $(obj).closest(".dayitemsdetails").find(".setsInformation");
+     var data = [];
+      $(".set_"+exerciseWorkout+".last ").each(function(i,obj){
+         reps = $(this).find(".edit.reps").val();
+         rest = $(this).find(".edit.rest").val();
+         weight = $(this).find(".edit.weight").val();
+   
+         distance = $(this).find(".edit.distance").val();
+         speed = $(this).find(".edit.speed").val();
+         time = $(this).find(".edit.time").val();
+         //hr = $(this).find(".edit.hr").val();
+   
+         idSet = $(this).find(".edit.idSet").val();
+         idExercise = $(this).find(".edit.idExercise").val();
+         completed = 0;
+         if($(this).find(".edit.idSet").prop("checked")){
+           completed = 1;
+         }
+         var entry = {"reps":reps,"weight":weight,"speed":speed,"distance":distance,"time":time,"rest":rest,"idSet":idSet};
+         data.push(entry);
+         
+       });
+       
+     $.ajax(
+           {
+               url : "/Workout/exerciseCompleted",
+               type: "POST",
+               data: {
+                   workoutsExercisesId: exerciseWorkout,
+                   workoutId: {{ $workout->id }},
+                   sets:data
+               },
+               success:function(data, textStatus, jqXHR) 
+               {
+                   successMessage(data);
+                   viewModeRow(obj);
+                   table.find("input[type=checkbox]").prop("checked",true);
+                   viewModeAll(exerciseWorkout);
+               },
+               error: function(jqXHR, textStatus, errorThrown) 
+               {
+                   errorMessage(jqXHR.responseText);
+               },
+           });
+   }
+   
+   function editModeAllSets(exerciseId,obj){
+     var table = $(obj).closest(".dayitemsdetails").find(".setsInformation");
+     var moreButton = table.find(".moreButton");
+     showMore(exerciseId,moreButton);
+     editModeAll(table);
+   
+     if($(obj).attr("status") == "edit"){
+         $(obj).attr("status","save");
+         $(obj).attr("onClick","saveAll("+exerciseId+",$(this))");
+         $(obj).text("Click to save all");
+     } else {
+         $(obj).attr("onCLick","editModeAllSets("+exerciseId+",$(this))");
+         $(obj).attr("status","edit");
+         $(obj).text("Click to edit all");
+     }
+   }
+   
+   
+   function saveAll(exerciseId,element){
+     var data = [];
+     var counter = 0;
+     
+     $(".exerciseTable_"+exerciseId+" tr").each(function(i,obj){
+       if(counter > 1){
+         reps = $(this).find(".edit.reps").val();
+         rest = $(this).find(".edit.rest").val();
+         weight = $(this).find(".edit.weight").val();
+   
+         distance = $(this).find(".edit.distance").val();
+         speed = $(this).find(".edit.speed").val();
+         time = $(this).find(".edit.time").val();
+         //hr = $(this).find(".edit.hr").val();
+   
+         idSet = $(this).find(".edit.idSet").val();
+         idExercise = $(this).find(".edit.idExercise").val();
+         completed = 0;
+         if($(this).find(".edit.idSet").prop("checked")){
+           completed = 1;
+         }
+         var entry = {"reps":reps,"weight":weight,"speed":speed,"distance":distance,"time":time,"rest":rest,"idSet":idSet};
+         data.push(entry);
+         
+       }
+       counter++;
+     });
+     $.ajax(
+           {
+               url : "/Workout/saveAllSets",
+               type: "POST",
+               data: {
+                 sets:data,
+                 exerciseId:exerciseId,
+                 workoutId: {{ $workout->id }}
+               },
+               success:function(data, textStatus, jqXHR) 
+               {
+                   successMessage(data);
+                   viewModeAll(exerciseId);
+                   $(element).attr("onCLick","editModeAllSets("+exerciseId+",$(this))");
+                   $(element).attr("status","edit");
+                   $(element).text("Click to edit all");
+               },
+               error: function(jqXHR, textStatus, errorThrown) 
+               {
+                   errorMessage(jqXHR.responseText);
+               },
+           });
+   
+   }
+   
+   
+</script>
+<script type="text/javascript">
+   $(document).ready(function(){ $("#m_workouts").addClass('active'); });
+</script>
+@endsection
