@@ -34,8 +34,8 @@ body, html {
   color:#FFF;
   font-size: 24px;
   display: inline;
-  padding: 0;margin: 0;
-  border-bottom: 5px solid rgba(56,175,223,0.65);
+  padding:0 0 3px 0;margin:0;
+  border-bottom: 3px solid rgba(56,175,223,0.65);
 }
 
 .popup_container .header .lower_header {
@@ -58,6 +58,11 @@ body, html {
 .popup_container .header .lower_header ul li a {
   text-decoration: none;
   color:#FFF;
+}
+.popup_container .header .lower_header ul li a i {
+  font-size: 20px;
+  color:#FFF;
+  margin-right: 10px;
 }
 .popup_container .header .lower_header ul  li:last-child { margin:0 !important;}
 
