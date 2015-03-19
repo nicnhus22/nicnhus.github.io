@@ -1,0 +1,24 @@
+{
+  "name": "NodePie",
+  "version": "1.0.0",
+  "description": "Node and RaspPi project",
+  "main": "server.js",
+  "dependencies": {
+    "socket.io": "^0.9.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nicnhus22/NodePie"
+  },
+  "author": "nicnhus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nicnhus22/NodePie/issues"
+  },
+  "homepage": "https://github.com/nicnhus22/NodePie"
+}
