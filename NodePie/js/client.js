@@ -2,7 +2,7 @@
 (function($){
 
 	// Create connection to the socket
-	var socket    = io.connect('http://localhost:1337');
+	var socket    = io.connect('http://nicnhus22.github.io/nicnhus.github.io/NodePie:1337');
 
 	// Keep track of myself
 	var self;
