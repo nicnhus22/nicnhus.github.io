@@ -18,17 +18,95 @@
             <div class="upper_header"><h1>Sharing Upper Body Workout</h1></div>
             <div class="lower_header">
                 <ul>
-                    <li class="active"><a href=""><i class="fa fa-search"></i>search</a></li>
-                    <li><a href=""><i class="fa fa-envelope-o"></i>email</a></li>
-                    <li><a href=""><i class="fa fa-link"></i>url</a></li>
+                    <li id="nav_search" class="active"><a href="javascript:void(0)" onclick="showSearchTab()"><i class="fa fa-search"></i>search</a></li>
+                    <li id="nav_email" ><a href="javascript:void(0)" onclick="showEmailTab()"><i class="fa fa-envelope"></i>email</a></li>
+                    <li id="nav_url" ><a href="javascript:void(0)" onclick="showURLTab()"><i class="fa fa-link"></i>url</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="content">
+        <div class="share_content">
+                <!-- TAB: SHARE -->
+                <section  id="tab_search" class="share_search">
+                    <div class="input_container">
+                        <div class="input_label">Search friend or client by name</div>
+                        <input type="text" name="">
+                        <a href="" class="button search">Search</a>
+                    </div>
+                    <div class="button_container">
+                        <a href="javascript:void(0)" onclick="" class="button send">Send</a>
+                    </div>
+                </section>
 
+                <!-- TAB: EMAIL -->
+                <section id="tab_email" class="share_email">
+                    
+                    <div class="input_container">
+                        <div class="input_label">Enter the emails below</div>
+                        <input type="text" name="" placeholder="e-mail of your friend to share a workout">
+                        <div class="input_sub_label">You can add multiple email by separating them with a coma</div>
+                    </div>
+
+                    <div class="button_container">
+                        <a href="javascript:void(0)" onclick="" class="button send">Send</a>
+                    </div>
+                </section>
+
+                <!-- TAB: URL -->
+                <section id="tab_url" class="share_url">
+
+                    <div class="input_container">
+                        <div class="input_label">Give this link to your friends</div>
+                        <input type="text" name="" data-copy="whaaaat" id="copy_value" placeholder="http://trainerworkout.com/1827s8d7dsdj1988212918" disabled="disabled">
+                        <div class="input_sub_label">Whomever has this link will be able to add this workout</div>
+                        <a href="javascript:void(0)" onclick="copyURL()" id="copy_link" class="button copy">Copy Link</a>
+                    </div>
+
+                    <div class="button_container">
+                        <a href="javascript:void(0)" onclick="" class="button send">Send</a>
+                    </div>
+                </section>
         </div>
    </div>
 
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="jquery.zclip.js"></script>
+
+<script>
+
+$("#tab_email").hide();
+$("#tab_url").hide();
+
+var currentTab = "search";
+
+function showSearchTab(){
+    $("#nav_"+currentTab).removeClass("active");
+    $("#nav_search").addClass("active");
+    $("#tab_"+currentTab).hide();
+    $("#tab_search").fadeIn();
+    currentTab = "search";
+}
+
+function showEmailTab(){
+    $("#nav_"+currentTab).removeClass("active");
+    $("#nav_email").addClass("active");
+    $("#tab_"+currentTab).hide(); 
+    $("#tab_email").fadeIn();
+    currentTab = "email";
+}
+
+function showURLTab(){
+    $("#nav_"+currentTab).removeClass("active");
+    $("#nav_url").addClass("active");
+    $("#tab_"+currentTab).hide();
+    $("#tab_url").fadeIn();
+    currentTab = "url";
+}
+
+function copyURL(){
+    $("#copy_link").addClass("clicked");
+    $("#copy_link").text("Link Copied");
+}
+</script>
 </body>
 </html>
