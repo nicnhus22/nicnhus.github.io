@@ -112,7 +112,8 @@ body, html {
 
 .share_search .input_container {
   position: relative;
-  text-align: center;
+    width: 415px;
+  margin: auto auto;
   color:#FFF;
 }
 .share_search .input_container .input_label {
