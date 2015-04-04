@@ -1,21 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  line-height: 0;
-  height: 0;
-}
-.clearfix {
-  display: inline-block;
-}
-html[xmlns] .clearfix {
-  display: block;
-}
-* html .clearfix {
-  height: 1%;
-}
 .noselect {
   -webkit-user-select: none;
   /* Chrome/Safari */
@@ -24,50 +6,56 @@ html[xmlns] .clearfix {
   -ms-user-select: none;
   /* IE10+ */
 }
-h4 {
-  width: 75%;
-  text-align: center;
-  font-family: 'Droid Sans Mono';
-  font-weight: normal;
-  color: white;
-  font-size: 14px;
-  margin: 0 auto 1em auto;
-  padding: 1em;
-  background: #b63642;
+
+* {
+  font-family: 'Open Sans', sans-serif;
 }
-p {
-  text-align: center;
-  font-family: 'Droid Sans Mono';
-  margin: 3em auto 1em auto;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  border-bottom: 2px solid #414141;
-  background: #f4f4f4;
+
+ul {margin: 0; padding:0;}
+
+.container {
+  position: relative;
+  height:600px;
+  width: 1000px;
 }
+
 .cal1 {
-  margin: 30px auto;
-  max-width: 600px;
+  /* margin: 30px auto; */
+  max-width: 100%;
+  height: 100%;
   font-family: 'Droid Sans Mono';
   font-size: 14px;
   background: rgb(103,218,188);
+  overflow: hidden;
+  position: relative;
+}
+.cal1 .clndr {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.cal1 .left_panel {
+  width: 65%;
+  position: relative;
+  float: right;
 }
 .cal1 .clndr .clndr-controls {
   display: inline-block;
   width: 100%;
   position: relative;
-  margin-bottom: 10px;
-  padding-top: 20px;
+  margin-bottom: 40px;
+  padding-top: 40px;
 }
 .cal1 .clndr .clndr-controls .month {
   float: left;
-  width: 40%;
+  width: 22%;
   text-align: center;
   color: #FFF;
   font-size: 25px;
 }
 .cal1 .clndr .clndr-controls .clndr-control-button {
   float: left;
-  width: 30%;
+  width: 39%;
   text-align: right;
   font-size: 25px;
   color: #FFF;
@@ -75,7 +63,7 @@ p {
 }
 .cal1 .clndr .clndr-controls .clndr-control-button.rightalign {
   text-align: left;
-  width: 30%;
+  width: 39%;
 }
 .cal1 .clndr .clndr-controls .clndr-control-button .clndr-next-button {
   cursor: pointer;
@@ -144,30 +132,37 @@ p {
   /* width: 100%; */
   height: inherit;
 }
-.cal1 .clndr .clndr-table tr .day:hover {
+.cal1 .clndr .clndr-table tr .day:hover{
   cursor: pointer;
+}
+.cal1 .clndr .clndr-table tr .day:hover .day-contents {
+  font-size: 40px;
+  -webkit-transition:all .5s ease;
+    -moz-transition:all .5s ease;
+      -o-transition:all .5s ease;
+        transition:all .5s ease;
 }
 .cal1 .clndr .clndr-table tr .day.today .day-contents, 
 .cal1 .clndr .clndr-table tr .day.my-today .day-contents {
-    border: 3px solid rgb(144,252,222) !important;    
+    border: 3px solid rgb(144,252,222);    
     border-radius: 5px;
 }
-.cal1 .clndr .clndr-table tr .day.today:hover,
-.cal1 .clndr .clndr-table tr .day.my-today:hover {
-  cursor: pointer;
+/*.cal1 .clndr .clndr-table tr .day.today:hover .day-contents,
+.cal1 .clndr .clndr-table tr .day.my-today:hover .day-contents {
+}*/
+.cal1 .clndr .clndr-table tr .day.today.event .day-contents ,
+.cal1 .clndr .clndr-table tr .day.my-today.event  .day-contents {
+  border: 3px solid #38AFDF !important;  
+  border-radius: 5px;
 }
-.cal1 .clndr .clndr-table tr .day.today.event,
-.cal1 .clndr .clndr-table tr .day.my-today.event {
-  background: #a7dbc1;
+.cal1 .clndr .clndr-table tr .day.event .day-contents,
+.cal1 .clndr .clndr-table tr .day.my-event .day-contents {
+  border: 3px solid #38AFDF !important;  
+  border-radius: 5px;
 }
-.cal1 .clndr .clndr-table tr .day.event,
-.cal1 .clndr .clndr-table tr .day.my-event {
-  background: #B4E09F;
-}
-.cal1 .clndr .clndr-table tr .day.event:hover,
+/*.cal1 .clndr .clndr-table tr .day.event:hover,
 .cal1 .clndr .clndr-table tr .day.my-event:hover {
-  background: #96d478;
-}
+}*/
 .cal1 .clndr .clndr-table tr .day.inactive,
 .cal1 .clndr .clndr-table tr .day.my-inactive {
   background: #ddd;
@@ -179,11 +174,12 @@ p {
   box-sizing: border-box;
   font-size: 20px;
   text-align: center;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   margin: auto;
   line-height: 22px;
   color: #FFF;
+  padding-top: 2px;
 }
 
 .day-label {
@@ -218,4 +214,100 @@ p {
 .cal1 .clndr .clndr-table tr:last-child .empty,
 .cal1 .clndr .clndr-table tr:last-child .my-empty {
   border-bottom: 1px solid #000000;
+}
+.day-selected {border: 3px solid #38AFDF;border-radius: 28px;}
+
+/* Side Bar */
+#w_calendar_full {
+  height: 100%;
+  position: relative;
+}
+#add_event {
+  color: #FFF;
+  font-size: 40px;
+  position: absolute;
+  right: 10px;
+  top: 3px;
+}
+.event_control {
+  height: 100%;
+  position: absolute;
+  width: 35%;
+  z-index: 1;
+}
+.event-listing {
+  position:absolute;
+  width: 100%;
+  background: #52D2D0;
+  height: 100%;
+}
+.event-listing .event-listing-title {
+  padding: 14px;
+  background-color: #71bbd2;
+  color: white;
+  letter-spacing: 1px;
+}
+.event-listing #event-item-list .event-item {
+  padding: 14px;
+  color: #4f4f4f;
+}
+.event-listing #event-item-list .event-item-location {
+  font-weight: 400;
+}
+
+/* LIST ITEM */
+#event-item-list {
+  overflow: hidden;
+  padding: 25px 20px;
+}
+#event-item-list ul { list-style-type: none;}
+#event-item-list ul li {
+  color:rgb(158,255,230);
+  width:100%; 
+  font-size: 18px;
+  height: 39px;
+}
+#event-item-list ul li .calendar_time { 
+  float: left;
+  width:20%;
+  padding-right: 10px;
+  font-weight: bold; 
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+        box-sizing: border-box;
+  text-align: right;
+}
+
+#event-item-list ul li .calendar_line { 
+  position: relative;
+  float: right;
+  width:80%;
+  margin-top: 9px;
+  border-top: 1px solid rgb(158,255,230);
+}
+
+.calendar_event {
+  position:absolute;
+  width: 100%;width: 100%;
+  background: rgba(255,255,255,0.5);
+  color:#71bbd2;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+      -o-box-sizing: border-box;
+        box-sizing: border-box;
+  z-index: 1;
+}
+
+.noselect {
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+
+  -moz-user-select: none;
+  /* Firefox */
+
+  -ms-user-select: none;
+  /* IE10+ */
+
 }

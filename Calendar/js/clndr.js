@@ -38,8 +38,10 @@
 }(function ($, moment) {
 
   // This is the default calendar template. This can be overridden.
-  var clndrTemplate = "<div class='clndr-controls'>" +
-    "<div class='clndr-control-button'><span class='clndr-previous-button'>&lt;</span></div><div class='month'><%= month %> <%= year %></div><div class='clndr-control-button rightalign'><span class='clndr-next-button'>&gt;</span></div>" +
+  var clndrTemplate = 
+  "<div class='left_panel'>"+
+    "<div class='clndr-controls'>" +
+      "<div class='clndr-control-button'><span class='clndr-previous-button'>&lt;</span></div><div class='month'><%= month %> <%= year %></div><div class='clndr-control-button rightalign'><span class='clndr-next-button'>&gt;</span></div>" +
     "</div>" +
     "<table class='clndr-table' border='0' cellspacing='0' cellpadding='0'>" +
       "<tbody>" +
@@ -47,14 +49,17 @@
         "<tr>" +
         "<% for(var j = 0; j < 7; j++){ %>" +
         "<% var d = j + i * 7; %>" +
-        "<td class='<%= days[d].classes %>'><div class='day-contents'><%= days[d].day %>" +
-        "<div class='day-label'><%= daysOfTheWeek[j] %></div>" +
-        "</div></td>" +
+        "<td class='<%= days[d].classes %>'>"+
+          "<div class='day-contents'><%= days[d].day %>" +
+          "<div class='day-label'><%= daysOfTheWeek[j] %></div>" +
+          "</div>"+
+        "</td>" +
         "<% } %>" +
         "</tr>" +
       "<% } %>" +
       "</tbody>" +
-    "</table>";
+    "</table>"+
+  "</div>";
 
   var pluginName = 'clndr';
 
@@ -438,6 +443,15 @@
 
     // day of week
     extraClasses += " calendar-dow-" + day.weekday();
+
+    if(extraClasses.indexOf('today') > -1){
+      _leftPanelInit(this.calendarDay({
+                        day: day.date(),
+                        classes: this.options.targets.day + extraClasses,
+                        events: eventsToday,
+                        date: day
+                      }));
+    }
 
     return this.calendarDay({
       day: day.date(),
@@ -925,6 +939,10 @@
     } else if(this.length > 1) {
       throw new Error("CLNDR does not support multiple elements yet. Make sure your clndr selector returns only one element.");
     }
+  }
+
+  Clndr.prototype.dayHover = function(options) {
+    alert();
   }
 
 }));
