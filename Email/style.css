@@ -101,12 +101,13 @@ footer ul.socials li img { width:50px; height:50px;}
 		position: relative;
 		text-align: center;
 		width:100%;
-		padding: 50px 0 50px 0;
+		padding: 25px 0;
 	}
 
 	header img {
-		width: 150px;
-	  	height: 80px;
+		width: 110px;
+	  	
+		height: 70px;
 	}
 
 	header div.label {
@@ -128,7 +129,7 @@ footer ul.socials li img { width:50px; height:50px;}
 		position: relative;
 		background-color: rgb(241,242,244);
 		width:100%;
-		padding: 50px 50px;
+		padding: 25px 50px;
 		margin: auto auto;
 		text-align: center;
 		border-bottom: solid #CBCFD6 1px;
