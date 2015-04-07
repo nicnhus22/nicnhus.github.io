@@ -80,7 +80,7 @@ footer {
 }
 
 footer ul.socials { list-style-type: none; margin:0; padding: 0;}
-footer ul.socials li { display: inline;}
+footer ul.socials li { display: inline; padding: 5px;}
 footer ul.socials li a { text-decoration: none;}
 footer ul.socials li img { width:50px; height:50px;}
 
