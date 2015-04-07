@@ -1,3 +1,6 @@
+*{
+	font-family: 'Open Sans', Helvetica Neue, sans-serif;
+}
 
 html, body{
 	background-color:rgb(241,242,244);
@@ -7,12 +10,43 @@ html, body{
 	padding:0;
 }
 
-
-section.content {
-	background-color: #FFF;
+header {
+	position: relative;
+	text-align: center;
+	width:100%;
+	padding: 50px 0 50px 0;
 }
 
+header img {
+	width: 200px;
+  	height: 115px;
+}
 
+section.outter {
+	position: relative;
+	width:400px;
+	padding:50px 0;
+	margin: auto auto;
+	text-align: center;
+	border-bottom: solid #CBCFD6 1px;
+	border-top: solid #CBCFD6 1px;
+}
+
+div.content {
+	position: relative;
+	background-color: #FFF;
+	width:100%;
+	padding: 50px 0;
+	margin: auto auto;
+	text-align: center;
+}
+
+footer {
+	position: relative;
+	text-align: center;
+	width:100%;
+	padding: 50px 0 50px 0;
+}
 
 @media screen and (max-width:480px){
 
