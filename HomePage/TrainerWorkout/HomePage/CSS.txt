@@ -1,0 +1,156 @@
+/* Homepage_Placeholder: */
+
+
+
+
+*********
+Main Menu
+*********
+
+
+/* TrainerWorkout.com: */
+font-family: .HelveticaNeueDeskInterface-Italic;
+font-size: 14px;
+color: #FFFFFF;
+line-height: 17px;
+
+
+/* Who Is This For     : */
+font-family: OpenSans;
+font-size: 15px;
+color: #FFFFFF;
+line-height: 20px;
+
+
+/* Our Product: */
+font-family: OpenSans;
+font-size: 15px;
+color: #FFFFFF;
+line-height: 20px;
+
+
+/* Benefits: */
+font-family: OpenSans;
+font-size: 15px;
+color: #FFFFFF;
+line-height: 20px;
+
+
+/* Testimonials: */
+font-family: OpenSans;
+font-size: 15px;
+color: #FFFFFF;
+line-height: 20px;
+
+
+/* Log In       : */
+font-family: OpenSans;
+font-size: 15px;
+color: #FFFFFF;
+line-height: 20px;
+
+
+/* Pricing: */
+font-family: OpenSans;
+font-size: 15px;
+color: #FFFFFF;
+line-height: 20px;
+
+
+/* Features: */
+font-family: OpenSans;
+font-size: 15px;
+color: #FFFFFF;
+line-height: 20px;
+
+
+/* Line Hover: */
+border: 1px solid #FFFFFF;
+
+
+
+/* Background Sign Up Button: */
+background: #53D2B1;
+/* Sign Up: */
+font-family: OpenSans;
+font-size: 14px;
+color: #FFFFFF;
+line-height: 19px;
+
+
+
+*********
+Jumbotron
+*********
+
+/* Play Button : */
+border: 3px solid #FFFFFF;
+/* Triangle 1: */
+transform: rotate(90deg);
+background: #FFFFFF;
+
+
+/* Coaching platform ma  (main Header): */
+opacity: 0.8;
+font-family: OpenSans-Light;
+font-size: 50px;
+color: #FFFFFF;
+line-height: 68px;
+
+
+
+***************
+Who is this for 
+***************
+
+/* Background (Who is this for): */
+background: #53D2B1;
+
+
+/* Personal trainer wan: */
+font-family: OpenSans-Bold;
+font-size: 28px;
+color: #424A7A;
+letter-spacing: 1.75px;
+line-height: 54px;
+
+
+/* Personal trainer wan: */
+font-family: OpenSans-Bold;
+font-size: 28px;
+color: #424A7A;
+letter-spacing: 1.75px;
+line-height: 54px;
+
+
+/* Hands’ on personal t: */
+font-family: OpenSans-Bold;
+font-size: 28px;
+color: #424A7A;
+letter-spacing: 1.75px;
+line-height: 72px;
+
+
+/* WHO : */
+font-family: OpenSans-Bold;
+font-size: 48px;
+color: #424A7A;
+line-height: 65px;
+
+
+/* IS THIS : */
+font-family: OpenSans-Bold;
+font-size: 48px;
+color: #424A7A;
+line-height: 65px;
+
+
+/* FOR : */
+font-family: OpenSans-Bold;
+font-size: 48px;
+color: #424A7A;
+line-height: 65px;
+
+/* Line: */
+border: 1px solid #424A7A;
+box-shadow: 1px 0px 4px 0px rgba(66,74,122,0.37);
