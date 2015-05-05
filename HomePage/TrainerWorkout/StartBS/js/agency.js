@@ -41,7 +41,7 @@ $(window).resize(function(){
 function adjustSliders(width){
 	if(width < 1350){
 		$("#slider_container").css("right","");
-		$("#slider_container").css("left","200px");		
+		$("#slider_container").css("left","192px");		
 	} else {
 		$("#slider_container").css("left","")
 		$("#slider_container").css("right","58%")
@@ -67,7 +67,7 @@ function showSliders(){
 
 $(window).on('scroll', function() {
     var y_scroll_pos = window.pageYOffset;
-    var scroll_pos_test = 600;             // set to whatever you want it to be
+    var scroll_pos_test = 300;             // set to whatever you want it to be
 
     if(y_scroll_pos > scroll_pos_test) {
        	showSliders();

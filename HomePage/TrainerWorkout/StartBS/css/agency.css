@@ -941,7 +941,9 @@ body {
         background-size: cover;
         -o-background-size: cover;
     }
-
+    #slider_container {
+        display: none;
+    }
 }
 
 
@@ -960,6 +962,7 @@ body {
         -moz-transform: skewX(-2.7deg);
             -ms-transform: skewX(-2.7deg);
                 -o-transform: skewX(-2.7deg);
+                    transform: skewX(-2.7deg);
 }
 
 #slider_container ul {
@@ -973,6 +976,15 @@ body {
     height:70px;
     border-bottom-left-radius: 35px;
     border-top-left-radius: 35px;
+    -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+            -ms-box-sizing:border-box;
+                -o-box-sizing:border-box;
+                    box-sizing:border-box;
+    font-size: 18px;
+    color: #FFF;
+    text-align: right;
+    padding: 23px 10px 23px 0;
 }
 
 #slider_container ul li:nth-child(1) {background-color:#F89406;}
