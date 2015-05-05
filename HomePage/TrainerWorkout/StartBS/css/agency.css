@@ -934,7 +934,7 @@ body {
 
     #mobile_slider_container ul li {    
         font-size: 15px !important;
-        padding: 24px 10px 24px 0 !important;
+        padding: 24px 0 !important;
     }
 }
 
@@ -1030,7 +1030,7 @@ body {
     font-size: 18px;
     color: #FFF;
     text-align: center;
-    padding: 23px 10px 23px 0;
+    padding: 23px 0;
 }
 
 #mobile_slider_container ul li:nth-child(1) {background-color:#F89406;}
