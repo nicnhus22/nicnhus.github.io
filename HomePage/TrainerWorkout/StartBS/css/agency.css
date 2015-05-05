@@ -916,11 +916,11 @@ body {
 /* MOBILE */
 @media(max-width:545px) {
     section h2.section-heading {
-      font-size: 24px;
+      font-size: 22px;
     }
 
     section h3.section-subheading {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     header .intro-text .intro-lead-in {
