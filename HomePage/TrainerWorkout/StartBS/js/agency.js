@@ -59,7 +59,7 @@ function showSliders(){
 			   marginLeft: "0"
 			},500, "linear");
 
-	    },300 + ( i * 300 ));
+	    },100 + ( i * 100 ));
 
 	});
 }
@@ -67,7 +67,7 @@ function showSliders(){
 
 $(window).on('scroll', function() {
     var y_scroll_pos = window.pageYOffset;
-    var scroll_pos_test = 800;             // set to whatever you want it to be
+    var scroll_pos_test = 600;             // set to whatever you want it to be
 
     if(y_scroll_pos > scroll_pos_test) {
        	showSliders();
