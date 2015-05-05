@@ -931,6 +931,11 @@ body {
     .btn-xl {
         padding: 15px 50px;
     }
+
+    #mobile_slider_container ul li {    
+        font-size: 15px !important;
+        padding: 24px 10px 24px 0 !important;
+    }
 }
 
 
@@ -954,11 +959,6 @@ body {
     }
     #mobile_slider_container {
         display: block !important;
-    }
-
-    #mobile_slider_container ul li {    
-        font-size: 15px !important;
-        padding: 24px 10px 24px 0 !important;
     }
 }
 
