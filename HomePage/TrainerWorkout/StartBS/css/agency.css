@@ -913,6 +913,20 @@ body {
 }
 
 /* MOBILE */
+@media(max-width:545px) {
+    section h2.section-heading {
+        font-size: 30px;
+    }
+
+    header .intro-text .intro-lead-in {
+      font-size: 32px;
+      line-height: 50px;
+    }
+}
+
+
+
+/* MOBILE */
 @media(max-width:975px) {
     #services {
         padding: 50px;
@@ -926,4 +940,5 @@ body {
         background-size: cover;
         -o-background-size: cover;
     }
+
 }
