@@ -916,7 +916,11 @@ body {
 /* MOBILE */
 @media(max-width:545px) {
     section h2.section-heading {
-        font-size: 30px;
+      font-size: 24px;
+    }
+
+    section h3.section-subheading {
+      font-size: 18px;
     }
 
     header .intro-text .intro-lead-in {
@@ -950,6 +954,11 @@ body {
     }
     #mobile_slider_container {
         display: block !important;
+    }
+
+    #mobile_slider_container ul li {    
+        font-size: 15px !important;
+        padding: 24px 10px 24px 0 !important;
     }
 }
 
