@@ -24,3 +24,52 @@ $('body').scrollspy({
 $('.navbar-collapse ul li a').click(function() {
     $('.navbar-toggle:visible').click();
 });
+
+$(document).ready(function() {
+
+
+	var win_width = $( window ).width();
+	adjustSliders(win_width);
+
+});
+
+$(window).resize(function(){
+	var win_width = $( window ).width();
+	adjustSliders(win_width);
+});	
+
+function adjustSliders(width){
+	if(width < 1350){
+		$("#slider_container").css("right","");
+		$("#slider_container").css("left","200px");		
+	} else {
+		$("#slider_container").css("left","")
+		$("#slider_container").css("right","58%")
+	}
+}
+
+function showSliders(){
+	var listItems = $("#sliders li");
+	listItems.each(function(i, li) {
+
+		setTimeout(function(){
+
+	       	var slider = $(li);
+		    slider.animate({
+			   marginLeft: "0"
+			},500, "linear");
+
+	    },300 + ( i * 300 ));
+
+	});
+}
+
+
+$(window).on('scroll', function() {
+    var y_scroll_pos = window.pageYOffset;
+    var scroll_pos_test = 800;             // set to whatever you want it to be
+
+    if(y_scroll_pos > scroll_pos_test) {
+       	showSliders();
+    }
+});

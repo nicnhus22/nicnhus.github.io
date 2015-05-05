@@ -303,11 +303,12 @@ header .intro-text .intro-heading {
 }
 
 #services {
+    position: relative;
     padding: 50px;
     height: 1100px;
     background-attachment: scroll;
     background-image: url(../img/services.jpg);
-    background-position: left bottom;
+    background-position: left 50%;
     background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -324,7 +325,7 @@ header .intro-text .intro-heading {
     header .intro-text .intro-lead-in {
         margin-bottom: 125px;
         font-family: "Open Sans",Helvetica,Arial,sans-serif;
-        font-size: 65px;
+        font-size: 63px;
         line-height: 75px;
     }
 
@@ -919,7 +920,7 @@ body {
     }
 
     header .intro-text .intro-lead-in {
-      font-size: 32px;
+      font-size: 28px;
       line-height: 50px;
     }
 }
@@ -942,3 +943,41 @@ body {
     }
 
 }
+
+
+
+
+/* Sliders */
+#slider_container {
+    position: absolute;
+    top: 28%;
+    width: 370px;
+    height: 420px;
+    right: 58%;
+    margin-right: 9px;
+    overflow: hidden;
+    -webkit-transform: skewX(-2.7deg);
+        -moz-transform: skewX(-2.7deg);
+            -ms-transform: skewX(-2.7deg);
+                -o-transform: skewX(-2.7deg);
+}
+
+#slider_container ul {
+    margin:0;padding: 0;
+    list-style-type: none;
+}
+
+#slider_container ul li {
+    width:100%;
+    margin-left: 100%;
+    height:70px;
+    border-bottom-left-radius: 35px;
+    border-top-left-radius: 35px;
+}
+
+#slider_container ul li:nth-child(1) {background-color:#F89406;}
+#slider_container ul li:nth-child(2) {background-color:#38AFDF;}
+#slider_container ul li:nth-child(3) {background-color:#52D2D0;}
+#slider_container ul li:nth-child(4) {background-color:#424A7A;}
+#slider_container ul li:nth-child(5) {background-color:#38AFDF;}
+#slider_container ul li:nth-child(6) {background-color:#879AD4;}
