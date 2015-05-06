@@ -31,13 +31,18 @@ $(document).ready(function() {
 	var win_width = $( window ).width();
 	adjustComputerSliders(win_width);
 	adjustWITFSlidersWidth();
-	hideWITFSliders();
+	if(window.innerWidth > 801){
+		hideWITFSliders();
+	}
+	console.log(window.innerWidth)
 });
 
 $(window).resize(function(){
 	var win_width = $( window ).width();
 	adjustComputerSliders(win_width);
-	adjustWITFSlidersWidth();
+	if(window.innerWidth > 801){
+		adjustWITFSlidersWidth();
+	}
 });	
 
 function adjustComputerSliders(width){
@@ -92,9 +97,11 @@ $(window).on('scroll', function() {
     var pageBottom = window.pageYOffset+window.innerHeight;
     var triggerWITFSlider = 300;             // set to whatever you want it to be
 
-    if(pageBottom > $("#witf_sliders #1").offset().top+200){    	showSlider($("#witf_sliders #1"));    }
-    if(pageBottom > $("#witf_sliders #2").offset().top+200){    	showSlider($("#witf_sliders #2"));    }
-    if(pageBottom > $("#witf_sliders #3").offset().top+200){    	showSlider($("#witf_sliders #3"));    }
+    if(window.innerWidth > 801){
+    	if(pageBottom > $("#witf_sliders #1").offset().top+200){    	showSlider($("#witf_sliders #1"));    }
+	    if(pageBottom > $("#witf_sliders #2").offset().top+200){    	showSlider($("#witf_sliders #2"));    }
+	    if(pageBottom > $("#witf_sliders #3").offset().top+200){    	showSlider($("#witf_sliders #3"));    }
+    }
     if(pageBottom > $("#sliders").offset().top+100) 		   {		showComputerSliders()				  }
 });
 
