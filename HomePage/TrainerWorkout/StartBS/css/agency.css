@@ -7,6 +7,7 @@
 body {
     overflow-x: hidden;
     font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    background-color: #F4F5F9;
 }
 
 .text-muted {
@@ -302,6 +303,8 @@ header .intro-text .intro-heading {
     line-height: 50px;
 }
 
+
+/************** Services ***************/
 section#services {
     position: relative;
     height: 1100px;
@@ -309,6 +312,8 @@ section#services {
     background-position: left 50%;
 }
 
+
+/************** Who is this for ***************/
 section#witf {
     position: relative;
     background-color:#53D2B1;
@@ -366,6 +371,11 @@ section#witf .container .witf_title div {
                     transform: skewX(-10deg);
 }
 
+/************** Testimonials ***************/
+section#testimonials {
+    overflow: hidden;
+}
+
 section#testimonials, section#testimonials div.col-md-4 {
     padding: 0;
 }
@@ -402,6 +412,13 @@ section#testimonials, section#testimonials div.col-md-4 {
 .testimo_bg_blue   {    background-color: #38ACFF;    }
 .testimo_bg_green  {    background-color: #52D2B0;    }
 .testimo_bg_orange {    background-color: #F89406;    }
+
+
+/************** Features ***************/
+section#features {
+    background-color: #F4F5F9;
+}
+
 
 @media(min-width:768px) {
     header .intro-text {
@@ -834,4 +851,9 @@ body {
 #witf_slider_container ul li div span {
     color:#FFF;
     font-size: 45px;
+}
+
+
+.margin-50 {
+    margin-bottom: 50px !important;
 }
