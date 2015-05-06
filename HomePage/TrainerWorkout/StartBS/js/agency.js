@@ -53,9 +53,7 @@ function adjustComputerSliders(width){
 function showComputerSliders(){
 	var listItems = $("#sliders li");
 	listItems.each(function(i, li) {
-
 		setTimeout(function(){
-
 	       	var slider = $(li);
 		    slider.animate({
 			   marginLeft: "0"
@@ -79,7 +77,7 @@ function adjustWITFSlidersWidth(){
 function hideWITFSliders(){
 	var listItems = $("#witf_sliders li");
 	listItems.each(function(i, li) {
-		$(li).css("margin-left","-100%");
+		$(li).css("margin-left","-150%");
 	});
 }
 
@@ -99,3 +97,6 @@ $(window).on('scroll', function() {
     if(pageBottom > $("#witf_sliders #3").offset().top+200){    	showSlider($("#witf_sliders #3"));    }
     if(pageBottom > $("#sliders").offset().top+100) 		   {		showComputerSliders()				  }
 });
+
+
+//   background-image: linear-gradient(-180deg, #424A79 5%, #38ACFF 91%);

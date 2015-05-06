@@ -487,20 +487,6 @@ body {
 }
 
 
-
-
-/* MOBILE */
-@media(max-width:768px) {
-    .navbar-default {
-        display: none;
-    }
-
-    .mobile-logo {
-        display: block;
-        margin: 50px auto 0 auto;
-    }
-}
-
 /* MOBILE */
 @media(max-width:545px) {
     section h2.section-heading {
@@ -524,8 +510,83 @@ body {
         font-size: 15px !important;
         padding: 24px 0 !important;
     }
+    #witf_slider_container ul li div span {
+      font-size: 30px !important;
+    }
+    #witf_slider_container ul li {
+      font-size: 17px !important;
+    }
+    section#witf .container .witf_title {
+        font-size: 40px !important;
+    }
 }
 
+/* MOBILE */
+@media(max-width:600px) {
+    section#witf .container .witf_title {
+        position: relative;
+        text-align: center;
+        width: auto;
+        padding-bottom: 50px;
+        padding-right: 0 !important;
+        -webkit-transform: skewX(0) !important;
+        -moz-transform: skewX(0) !important;
+        -ms-transform: skewX(0) !important;
+        -o-transform: skewX(0) !important;
+        transform: skewX(0) !important;
+    }
+    #witf_slider_container {
+        margin-left: 0  !important;
+        padding: 0 50px !important;
+        -webkit-transform: skewX(0) !important;
+        -moz-transform: skewX(0) !important;
+        -ms-transform: skewX(0) !important;
+        -o-transform: skewX(0) !important;
+        transform: skewX(0) !important;
+    }
+    #witf_slider_container ul li:nth-child(2) {
+        text-align: right;
+    }
+    #witf_slider_container ul li div {
+        -webkit-transform: skewX(0) !important;;
+        -moz-transform: skewX(0) !important;;
+        -ms-transform: skewX(0) !important;;
+        -o-transform: skewX(0) !important;;
+        transform: skewX(0) !important;;
+    }
+
+    section#witf .container .witf_title div {
+        display: inline-block;
+    }
+    section#witf .container .vertical_line {
+        display: none;
+    }
+}
+
+
+/* MOBILE */
+@media(max-width:768px) {
+    .navbar-default {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+        margin: 50px auto 0 auto;
+    }
+}
+
+
+/* MOBILE */
+@media(max-width:820px) {
+    section#witf .container .witf_title {
+        font-size: 45px !important;
+    }
+
+    #witf_slider_container ul li {
+        font-size: 20px !important;
+    }
+}
 
 
 /* MOBILE */
@@ -533,6 +594,7 @@ body {
     section#services {
         height: 700px;
         background-image: url(../img/services-mobile.jpg) !important;
+        background-position: center center !important;
     }
     #slider_container {
         display: none;
