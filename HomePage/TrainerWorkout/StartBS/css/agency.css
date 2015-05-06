@@ -312,7 +312,7 @@ section#services {
 section#witf {
     position: relative;
     background-color:#53D2B1;
-    /* padding: 50px; */
+    overflow: hidden;
 }
 
 section#witf .container {

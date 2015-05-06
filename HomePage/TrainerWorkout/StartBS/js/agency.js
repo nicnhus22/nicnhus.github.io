@@ -40,9 +40,7 @@ $(document).ready(function() {
 $(window).resize(function(){
 	var win_width = $( window ).width();
 	adjustComputerSliders(win_width);
-	if(window.innerWidth > 801){
-		adjustWITFSlidersWidth();
-	}
+	adjustWITFSlidersWidth();
 });	
 
 function adjustComputerSliders(width){
