@@ -620,6 +620,9 @@ body {
     .resp-disapear {
         display: none;
     }
+    .quote_holder {
+        font-size: 14px !important;
+    }
 }
 
 
@@ -633,6 +636,9 @@ body {
         display: block;
         margin: 50px auto 0 auto;
     }
+    .quote_holder {
+        font-size: 16px !important;
+    }
 }
 
 
@@ -645,7 +651,14 @@ body {
     #witf_slider_container ul li {
         font-size: 20px !important;
     }
+    .quote_holder {
+        font-size: 18px !important;
+    }
+}
 
+
+/* MOBILE */
+@media(max-width:1030px) {
     .col-md-4 {
         width:50%;
         float:none;
@@ -665,10 +678,9 @@ body {
         left:0;
     }
     .quote_holder {
-        font-size: 14px !important;
+        font-size: 20px !important;
     }
 }
-
 
 /* MOBILE */
 @media(max-width:975px) {
