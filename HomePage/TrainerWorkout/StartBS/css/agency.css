@@ -561,6 +561,9 @@ body {
     section#witf .container .vertical_line {
         display: none;
     }
+    .resp-disapear {
+        display: none;
+    }
 }
 
 
