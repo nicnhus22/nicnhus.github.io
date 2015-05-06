@@ -29,16 +29,18 @@ $(document).ready(function() {
 
 
 	var win_width = $( window ).width();
-	adjustSliders(win_width);
-
+	adjustComputerSliders(win_width);
+	adjustWITFSlidersWidth();
+	hideWITFSliders();
 });
 
 $(window).resize(function(){
 	var win_width = $( window ).width();
-	adjustSliders(win_width);
+	adjustComputerSliders(win_width);
+	adjustWITFSlidersWidth();
 });	
 
-function adjustSliders(width){
+function adjustComputerSliders(width){
 	if(width < 1350){
 		$("#slider_container").css("right","");
 		$("#slider_container").css("left","192px");		
@@ -48,7 +50,7 @@ function adjustSliders(width){
 	}
 }
 
-function showSliders(){
+function showComputerSliders(){
 	var listItems = $("#sliders li");
 	listItems.each(function(i, li) {
 
@@ -65,11 +67,35 @@ function showSliders(){
 }
 
 
-$(window).on('scroll', function() {
-    var y_scroll_pos = window.pageYOffset;
-    var scroll_pos_test = 300;             // set to whatever you want it to be
+function adjustWITFSlidersWidth(){
+	var listItems = $("#witf_sliders li");
+	listItems.each(function(i, li) {
+		$(li).css("width","auto");
+		var width= $(li).width();
+		$(li).css("width",width+"px");
+	});
+}
 
-    if(y_scroll_pos > scroll_pos_test) {
-       	showSliders();
-    }
+function hideWITFSliders(){
+	var listItems = $("#witf_sliders li");
+	listItems.each(function(i, li) {
+		$(li).css("margin-left","-100%");
+	});
+}
+
+function showSlider(slider){
+	slider.animate({
+	   marginLeft: "0"
+	},500, "linear");
+}
+
+
+$(window).on('scroll', function() {
+    var pageBottom = window.pageYOffset+window.innerHeight;
+    var triggerWITFSlider = 300;             // set to whatever you want it to be
+
+    if(pageBottom > $("#witf_sliders #1").offset().top+200){    	showSlider($("#witf_sliders #1"));    }
+    if(pageBottom > $("#witf_sliders #2").offset().top+200){    	showSlider($("#witf_sliders #2"));    }
+    if(pageBottom > $("#witf_sliders #3").offset().top+200){    	showSlider($("#witf_sliders #3"));    }
+    if(pageBottom > $("#sliders").offset().top+100) 		   {		showComputerSliders()				  }
 });

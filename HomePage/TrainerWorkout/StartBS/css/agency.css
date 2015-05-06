@@ -644,6 +644,7 @@ body {
     position:relative;
     margin-left: 200px;
     padding-left: 50px;
+    overflow: hidden;
     -webkit-transform: skewX(10deg);
         -moz-transform: skewX(10deg);
             -ms-transform: skewX(10deg);
