@@ -219,15 +219,13 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
-    color: #fff;
+    color: #52D2D0;
     background-color: transparent;
-    border-bottom:2px solid;
-    border-color: #52D2D0;
 }
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
-    color: #fff;
+    color: #52D2D0;
     background-color: transparent;
 }
 
@@ -242,7 +240,7 @@ fieldset[disabled] .btn-xl.active {
     }
 
     .navbar-default .navbar-brand img {
-        width:150px;
+        width: 150px;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
@@ -254,7 +252,7 @@ fieldset[disabled] .btn-xl.active {
     }
 
     .navbar-default.navbar-shrink .navbar-brand img {
-        width:100px;
+        width: 70px;
     }
 }
 
@@ -300,7 +298,6 @@ header .intro-text .intro-heading {
     font-weight: 700;
     line-height: 50px;
 }
-
 
 /************** Services ***************/
 section#services {
@@ -490,7 +487,7 @@ section#pricing {
     background-color: #53D2B1;
     color:#FFF;
     font-size: 20px;
-    margin: -30px auto;
+    margin: -20px auto;
     padding-top: 30px;
     z-index: 9;
 }
@@ -1250,4 +1247,9 @@ body {
 .offset {
     position: absolute;
     top:-30px;
+}
+
+#get_started {
+    display: none;
+    margin-right: 15px;
 }
