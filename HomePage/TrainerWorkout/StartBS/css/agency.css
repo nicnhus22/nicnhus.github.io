@@ -541,9 +541,26 @@ section#pricing {
     color:#FFF;
     background-color: #674172;
     margin-top: 20px;
+    border-radius: 2px;
 }
 
+/* Sign Up */
+.signup_label {
+    font-size: 30px;
+    text-align: center;
+    width:100%;
+    color:#404A7A;
+}
 
+.signup_btn {
+    padding:10px 0;
+    text-align: center;
+    font-size: 25px;
+    color:#FFF;
+    background-color: #53D2B1;
+    margin-top: 20px;
+    border-radius: 2px;
+}
 
 @media(min-width:768px) {
     header .intro-text {
