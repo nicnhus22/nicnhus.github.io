@@ -562,6 +562,20 @@ section#pricing {
     border-radius: 2px;
 }
 
+ul.socials {
+    overflow: hidden;
+}
+
+ul.socials li {
+    float: left;
+    margin-right: 10px;
+}
+
+ul.socials li img {
+    width: 30px;
+    height:30px;
+}
+
 @media(min-width:768px) {
     header .intro-text {
         padding-top: 300px;
@@ -833,10 +847,10 @@ body {
         display: none;
     }
     .resp-disapear {
-        display: none;
+        display: none !important;
     }
     .resp-appear {
-        display: block;
+        display: block !important;
     }
     .quote_holder {
         font-size: 14px !important;
@@ -869,6 +883,14 @@ body {
     }
     .resp_float_left {  float:left;  }
     .resp_float_right {  float:right;  }
+
+    .newsletter_btn {
+        position: relative !important;
+    }
+    .pricing-banner {
+        margin-left:15px !important;
+        margin-right:15px !important;
+    }
 
 }
 
@@ -1195,4 +1217,7 @@ body {
 }
 .ribbon .text:after {
   right: 0;
+}
+.resp-appear {
+    display: none;
 }
