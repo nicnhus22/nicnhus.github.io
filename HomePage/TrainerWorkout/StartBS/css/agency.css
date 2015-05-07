@@ -492,7 +492,7 @@ section#pricing {
     background-color: #53D2B1;
     color:#FFF;
     font-size: 20px;
-    margin: -15px auto;
+    margin: -30px auto;
     padding-top: 30px;
     z-index: 9;
 }
@@ -994,6 +994,12 @@ body {
     .feature_detail_text {
         font-size: 17px;
     }
+    .break_quote {
+        display: block !important;
+    }
+    .signup_btn, .get_started {
+        font-size: 18px !important;
+    }
 }
 
 /* MOBILE */
@@ -1219,5 +1225,8 @@ body {
   right: 0;
 }
 .resp-appear {
+    display: none;
+}
+.break_quote {
     display: none;
 }
