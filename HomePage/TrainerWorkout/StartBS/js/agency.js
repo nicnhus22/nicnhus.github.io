@@ -27,20 +27,21 @@ $('.navbar-collapse ul li a').click(function() {
 
 $(document).ready(function() {
 
-
 	var win_width = $( window ).width();
 	adjustComputerSliders(win_width);
 	adjustWITFSlidersWidth();
 	if(window.innerWidth > 801){
 		hideWITFSliders();
 	}
-	console.log(window.innerWidth)
+
 });
 
 $(window).resize(function(){
 	var win_width = $( window ).width();
 	adjustComputerSliders(win_width);
-	adjustWITFSlidersWidth();
+	if(window.innerWidth > 801){
+		adjustWITFSlidersWidth();
+	}
 });	
 
 function adjustComputerSliders(width){
