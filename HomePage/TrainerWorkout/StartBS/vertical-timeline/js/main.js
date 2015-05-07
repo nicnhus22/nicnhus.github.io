@@ -17,21 +17,3 @@ jQuery(document).ready(function($){
 		});
 	});
 });
-$(window).on("load resize",function(e){
-
-    var startY = 200;
-
-    $(window).scroll(function(){
-        checkY();
-    });
-
-    function checkY(){
-        if( $(window).scrollTop() > startY ){
-            $('.nav').slideDown();
-        }else{
-            $('.nav').slideUp();
-        }
-    }
-    checkY();
-});
-
