@@ -446,14 +446,103 @@ section#features .col-md-6 {
 .feature_detail img {
     display: inline-block !important;
 }
-.feature_bg_purple {    background-color: #785681;  }
+.feature_bg_purple {    background-color: #879AD4;  }
 .feature_bg_green  {    background-color: #74DABF;  }
 .feature_bg_orange {    background-color: #F8A32A;  }
 .feature_bg_blue   {    background-color: #5BBDE5;  }
 
+.col-md-6 {
+    padding: 1px !important;
+}
+
 .col-md-6:hover .feature_detail {
     opacity: 1;
 }
+
+
+/* Pricing */
+section#pricing {
+    padding: 30px 0;
+}
+.pricing-banner {
+    background-color: #38AFDF;
+    color:#FFF;
+    font-size: 30px;
+    padding:20px 0 !important;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.pricing_switch * {
+    text-align: center; 
+    padding: 0;
+}
+.pricing_switch_label {
+    color: #FFF;
+    background-color: #38AFDF;
+    border: 1px #FFF solid;
+    padding: 15px 0 !important;
+    font-size: 20px;
+}
+
+.pricing_switch .plan {
+    position:relative;
+    height:90px;width: 90px;
+    border-radius: 45px;
+    border: 2px solid #FFF;
+    background-color: #53D2B1;
+    color:#FFF;
+    font-size: 20px;
+    margin: -15px auto;
+    padding-top: 30px;
+    z-index: 9;
+}
+
+.pricing_cols * {
+    text-align: center;
+}
+
+.pricing_cols {
+    background: linear-gradient(to right, #52d2b0 0%,#38afdf 100%);
+}
+
+.pricing_cols .col {
+    padding: 80px 0 !important;
+    border: 1px solid #FFF;
+}
+
+.price_label {
+    color: #FFF;
+    
+    font-size: 35px;
+    font-weight: bold;
+}
+.price_clients {
+    color: #FFF;
+    
+    font-size: 23px;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    margin: 10px 60px;
+    padding: 5px 0;
+}
+
+.content_center {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+
+.get_started {
+    padding:10px 0;
+    text-align: center;
+    font-size: 25px;
+    color:#FFF;
+    background-color: #674172;
+    margin-top: 20px;
+}
+
 
 
 @media(min-width:768px) {
@@ -697,6 +786,13 @@ body {
     .feature_detail_text {
       font-size: 15px !important;
     }
+
+    .pricing_switch_label {
+        width: 50%;
+    }
+    .resp_float_left {  float:left;  }
+    .resp_float_right {  float:right;  }
+
 }
 
 /* MOBILE */
@@ -742,13 +838,14 @@ body {
 
 /* MOBILE */
 @media(max-width:1030px) {
-    .col-md-4 {
+    .col-md-4-override {
         width:50%;
         float:none;
     }
 
-    .col-md-6 {
+    .col-md-6-override {
         float: none;
+        padding: 0 !important;
     }
 
     .testimonials_quote, .feature_detail {
@@ -797,6 +894,36 @@ body {
     }
     .feature_detail_text {
         font-size: 17px;
+    }
+}
+
+/* MOBILE */
+@media(max-width:995px) {
+    .pricing_cols .col {
+        padding: 35px 0 !important;
+    }
+
+    .price_label {
+        font-size: 25px;
+    }
+
+    .pricing_switch_label {
+        padding: 10px 0 !important;
+    }
+}
+
+/* MOBILE */
+@media(max-width:1100px) {
+    .pricing-banner {
+        font-size: 20px !important;
+    }
+}
+
+
+/* MOBILE */
+@media(max-width:1400px) {
+    .pricing-banner {
+        font-size: 20px;
     }
 }
 
@@ -939,4 +1066,56 @@ body {
 
 .margin-50 {
     margin-bottom: 50px !important;
+}
+
+.header-blue {
+    color:#38AFDF !important;
+}
+
+.row {
+    margin:0 !important;
+}
+
+
+
+/* RIBBON */
+.ribbon {
+  position: absolute;
+  top: -6px;
+  right: -4px;
+  width: 177px;
+  height: 122px;
+  overflow: hidden;
+}
+.ribbon .text {
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+  left: 116px;
+  top: 9px;
+  width: 83px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background-color: #53D2B1;
+  -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
+  -moz-transform: rotate(45deg) translate3d(0, 0, 0);
+  -ms-transform: rotate(45deg) translate3d(0, 0, 0);
+  -o-transform: rotate(45deg) translate3d(0, 0, 0);
+}
+.ribbon .text:before,
+.ribbon .text:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  border-top: 5px solid #28AD86;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+.ribbon .text:before {
+  left: 0;
+}
+.ribbon .text:after {
+  right: 0;
 }
