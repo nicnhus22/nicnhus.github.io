@@ -574,6 +574,13 @@ ul.socials li img {
     height:30px;
 }
 
+
+
+/* Timeline */
+section#timeline {
+    background-image: linear-gradient(-180deg, #424A79 5%, #38ACFF 91%);
+}
+
 @media(min-width:768px) {
     header .intro-text {
         padding-top: 300px;
