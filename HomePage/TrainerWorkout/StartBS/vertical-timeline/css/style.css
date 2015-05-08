@@ -20,7 +20,6 @@ Modules - reusable parts of our design
 #cd-timeline {
   position: relative;
   padding: 2em 0;
-  margin-top: 2em;
   margin-bottom: 2em;
 }
 #cd-timeline::before {
@@ -215,7 +214,7 @@ Modules - reusable parts of our design
   content: '';
   position: absolute;
   margin-right:-10px;
-  margin-left:-10px;
+  margin-left: -15px;
   height: 3px;
   width:33%;
   background: #53D2B1;
@@ -446,17 +445,88 @@ Modules - reusable parts of our design
 /* Ipad */
 @media(max-width:935px) {
     .cd-timeline-block:nth-child(odd) .cd-timeline-content {
-      margin-left: 55px !important;
-      padding-right: 50px !important;
+      margin-left: 55px;
+      padding-right: 50px;
     }
     .cd-timeline-block:nth-child(even) .cd-timeline-content {
-      margin-right: 55px !important;
-      padding-left: 50px !important;
+      margin-right: 55px;
+      padding-left: 50px;
     }
     .cd-timeline-content {
-      width: 35% !important;
+      width: 35%;
     }
 }
+
+/* Ipad */
+@media(max-width:760px) {
+    .cd-timeline-block .cd-timeline-content {
+      padding: 30px 0!important;
+      margin-right: 0;
+    }
+
+    .cd-timeline-content {
+      width: 80% !important;
+    }
+
+    .cd-timeline-img {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+      padding-left: 15px;
+      padding-top: 7px;
+      top: 10px;
+    }
+
+    .cd-timeline-content img {
+      width:50%;
+    }
+    .number_fix {
+      padding-left: 8px !important;
+    }
+    #cd-timeline::before {
+      left: 18px;
+    }
+    .cd-timeline-content h4 {
+      font-size: 16px !important;
+      padding: 0 15px !important;
+      margin-top: -35px;
+    }
+    .cd-timeline-content::before {
+      width: 10%;
+      margin-left: -25px;
+    }
+    .bullet {
+      height: 10px !important;
+      width: 10px !important;
+      border-radius: 5px !important;
+    }
+    .bullet-left {
+      right: 94% !important;
+      top: 35px !important;
+    }
+    .bullet-right {
+      left:auto !important;
+      right: 94% !important;
+      top: 35px !important;
+    }
+    section#timeline {
+      padding-bottom: 0 !important;
+    }
+    #cd-timeline {
+      margin-bottom: 0 !important; 
+    }
+}
+
+/* Ipad */
+@media(max-width:485px) {
+  .bullet-right {
+    margin-right: 8px !important;
+  }
+  .bullet-left {
+    margin-right: 6px !important;
+  }
+}
+
 
 .bullet {
   position: absolute;
