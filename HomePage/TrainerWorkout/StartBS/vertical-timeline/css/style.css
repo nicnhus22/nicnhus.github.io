@@ -81,7 +81,7 @@ Modules - reusable parts of our design
   background: #53D2B1;
   z-index:1;
   font-size: 30px;
-  padding-left: 20px;
+  padding-left: 22px;
   padding-top: 8px;
 }
 
@@ -447,13 +447,30 @@ Modules - reusable parts of our design
 @media(max-width:935px) {
     .cd-timeline-block:nth-child(odd) .cd-timeline-content {
       margin-left: 55px !important;
-      padding-right: 30px !important;
+      padding-right: 50px !important;
     }
     .cd-timeline-block:nth-child(even) .cd-timeline-content {
       margin-right: 55px !important;
-      padding-left: 30px !important;
+      padding-left: 50px !important;
     }
     .cd-timeline-content {
       width: 35% !important;
     }
+}
+
+.bullet {
+  position: absolute;
+  background-color: #53D2B1;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  top: 44%;
+  margin-top: -9px;
+}
+
+.bullet-left {
+  right: 5px;
+}
+.bullet-right {
+  left: 5px;
 }
