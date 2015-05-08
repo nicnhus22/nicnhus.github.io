@@ -33,7 +33,7 @@ Modules - reusable parts of our design
   width: 5px;
   background: #53D2B1;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 800px) {
   #cd-timeline {
     margin-top: 100px;
     margin-bottom:0;
@@ -59,7 +59,7 @@ Modules - reusable parts of our design
 .cd-timeline-block:last-child {
   margin-bottom: 0;
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 800px) {
   .cd-timeline-block {
     margin-top:50px;
   }
@@ -86,7 +86,7 @@ Modules - reusable parts of our design
 }
 
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 800px) {
   .cd-timeline-img {
     width: 60px;
     height: 60px;
@@ -221,7 +221,11 @@ Modules - reusable parts of our design
   background: #53D2B1;
   z-index:0;
 }
-@media only screen and (min-width: 768px) {
+.cd-timeline-img {
+  width: 60px;
+  height: 60px;
+}
+@media only screen and (min-width: 800px) {
   .cd-timeline-content {
     margin-left: 70px;
   margin-right:50px;
@@ -243,7 +247,7 @@ Modules - reusable parts of our design
     font-size: 0.875rem;
   }
 }
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 800px) {
   .cd-timeline-content {
     margin-left: 50px;
   margin-right:50px;
@@ -271,12 +275,16 @@ Modules - reusable parts of our design
     float: right;
   margin-top:-75px;
   margin-right:100px;
-  }
+  
+    padding-left: 70px;
+}
     .cd-timeline-block:nth-child(odd) .cd-timeline-content {
     float: left;
   margin-top:-75px;
   margin-left:100px;
-  }
+  
+    padding-right: 70px;
+}
 
   .cd-timeline-block:nth-child(even) .cd-timeline-content::before {
     top: 105px;
@@ -304,7 +312,7 @@ Modules - reusable parts of our design
   }
 }
 
-@media only screen and (min-width: 1170px) {
+@media only screen and (min-width: 800px) {
   /* inverse bounce effect on even content blocks */
   .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse 0.6s;
@@ -429,4 +437,8 @@ Modules - reusable parts of our design
 
 .number_fix {
   padding-left: 13px !important;
+}
+
+.vertical-img {
+    width: 50%;
 }

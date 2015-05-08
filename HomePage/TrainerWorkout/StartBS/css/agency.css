@@ -579,6 +579,7 @@ ul.socials li img {
 /* Timeline */
 section#timeline {
     background-image: linear-gradient(-180deg, #424A79 5%, #38ACFF 91%);
+    padding-bottom: 100px;
 }
 
 @media(min-width:768px) {
@@ -1259,4 +1260,15 @@ body {
 #get_started {
     display: none;
     margin-right: 15px;
+}
+
+.cd-timeline-content h4 {
+    color:#FFF;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 25px;
+}
+
+.cd-timeline-content img {
+    margin: auto;
 }
