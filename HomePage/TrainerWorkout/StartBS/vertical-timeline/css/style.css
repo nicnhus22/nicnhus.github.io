@@ -33,7 +33,7 @@ Modules - reusable parts of our design
   width: 5px;
   background: #53D2B1;
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 760px) {
   #cd-timeline {
     margin-top: 100px;
     margin-bottom:0;
@@ -59,7 +59,7 @@ Modules - reusable parts of our design
 .cd-timeline-block:last-child {
   margin-bottom: 0;
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 760px) {
   .cd-timeline-block {
     margin-top:50px;
   }
@@ -86,7 +86,7 @@ Modules - reusable parts of our design
 }
 
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 760px) {
   .cd-timeline-img {
     width: 60px;
     height: 60px;
@@ -225,7 +225,7 @@ Modules - reusable parts of our design
   width: 60px;
   height: 60px;
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 760px) {
   .cd-timeline-content {
     margin-left: 70px;
   margin-right:50px;
@@ -247,7 +247,7 @@ Modules - reusable parts of our design
     font-size: 0.875rem;
   }
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 760px) {
   .cd-timeline-content {
     margin-left: 50px;
   margin-right:50px;
@@ -312,7 +312,7 @@ Modules - reusable parts of our design
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 760px) {
   /* inverse bounce effect on even content blocks */
   .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
     -webkit-animation: cd-bounce-2-inverse 0.6s;
@@ -441,4 +441,19 @@ Modules - reusable parts of our design
 
 .vertical-img {
     width: 50%;
+}
+
+/* Ipad */
+@media(max-width:935px) {
+    .cd-timeline-block:nth-child(odd) .cd-timeline-content {
+      margin-left: 55px !important;
+      padding-right: 30px !important;
+    }
+    .cd-timeline-block:nth-child(even) .cd-timeline-content {
+      margin-right: 55px !important;
+      padding-left: 30px !important;
+    }
+    .cd-timeline-content {
+      width: 35% !important;
+    }
 }
