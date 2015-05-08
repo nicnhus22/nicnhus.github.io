@@ -1040,7 +1040,9 @@ body {
     .navbar-default {
         display: none;
     }
-
+    header .login_block {
+        padding-top: 90px !important;
+    }
     .mobile-logo {
         display: block;
         margin: 50px auto 0 auto;
