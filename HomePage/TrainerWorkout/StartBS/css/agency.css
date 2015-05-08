@@ -400,7 +400,7 @@ header .login_block .login_holder i.input-icon.first {
 
 header .login_block .login_holder i.input-icon.second {
   top: 192px;
-  left: 15px;
+  left: 13px;
   font-size: 30px;
 }
 
@@ -412,7 +412,9 @@ header .login_block .login_holder span {
     font-size: 17px;
 }
 
-
+.only {
+    top: 35px !important;
+}
 
 /************** Services ***************/
 section#services {
@@ -935,6 +937,19 @@ body {
         left:auto;
     }
 
+}
+
+/* MOBILE */
+@media(max-width:440px) {
+    header .login_block .login_holder {
+        width: 100% !important;
+    }
+    .login_holder a {
+        width: 100% !important;
+    }
+    header .login_block h1 {
+        font-size: 40px !important;
+    }
 }
 
 /* MOBILE */
